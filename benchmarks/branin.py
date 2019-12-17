@@ -1,6 +1,6 @@
 import numpy as np
 
-from benchmark_base import Function
+from benchmarks.benchmark_base import Function
 
 
 def fun_target(bx, a, b, c, r, s, t):
