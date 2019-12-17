@@ -7,7 +7,7 @@ with open(path_requirements) as f:
     required = f.read().splitlines()
 
 setup(
-    name='benchmarks',
+    name='bayeso-benchmarks',
     version='0.1.0',
     author='Jungtaek Kim',
     author_email='jtkim@postech.ac.kr',
