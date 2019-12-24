@@ -67,6 +67,7 @@ class Function(object):
         assert shape_bounds[1] == 2
         assert len(shape_global_minimizers) == 2
 
+        print(self.output(self.global_minimizers))
         assert np.all((self.output(self.global_minimizers) - self.global_minimum) < EPSILON)
 
         if self.dimensionality is np.inf:
