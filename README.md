@@ -3,3 +3,51 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Benchmarks for Bayesian optimization
+
+## Installation
+We recommend it should be installed in `virtualenv`.
+You can choose one of three installation options.
+
+* Using PyPI repository (for user installation)
+
+To install the released version in PyPI repository, command it.
+
+```shell
+$ pip install bayeso-benchmarks
+```
+
+* Using source code (for developer installation)
+
+To install `bayeso-benchmarks` from source code, command
+
+```shell
+$ pip install .
+```
+in the `bayeso-benchmarks` root.
+
+* Using source code (for editable development mode)
+
+To use editable development mode, command
+
+```shell
+$ pip install -r requirements.txt
+$ python setup.py develop
+```
+in the `bayeso-benchmarks` root.
+
+* Uninstallation
+
+If you would like to uninstall bayeso-benchmarks, command it.
+
+```shell
+$ pip uninstall bayeso-benchmarks
+```
+
+## Author
+* [Jungtaek Kim](http://mlg.postech.ac.kr/~jtkim/) (POSTECH)
+
+## Contact
+* Jungtaek Kim: [jtkim@postech.ac.kr](mailto:jtkim@postech.ac.kr)
+
+## License
+[MIT License](LICENSE)
