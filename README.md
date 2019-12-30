@@ -47,7 +47,7 @@ $ pip uninstall bayeso-benchmarks
 Mandatory pacakges are inlcuded in `requirements.txt`.
 The following `requirements` files include the package list, the purpose of which is described as follows.
 
-* `requirements-dev.txt`: It is for developing the `bayeso` package.
+* `requirements-dev.txt`: It is for developing the `bayeso-benchmarks` package.
 
 ## Author
 * [Jungtaek Kim](http://mlg.postech.ac.kr/~jtkim/) (POSTECH)

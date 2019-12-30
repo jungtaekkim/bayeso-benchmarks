@@ -11,6 +11,9 @@ class Function(object):
         assert isinstance(global_minimum, float)
         assert callable(function)
         assert isinstance(dim_problem, int) or dim_problem is None
+        assert len(bounds.shape) == 2
+        assert bounds.shape[1] == 2
+        assert (bounds[:, 0] <= bounds[:, 1]).all()
 
         self._dimensionality = dimensionality
         self._bounds = bounds
@@ -75,3 +78,16 @@ class Function(object):
         else:
             assert self.dimensionality == shape_bounds[0] == shape_global_minimizers[1]
 
+    def get_grids(self, num_grids):
+        assert isinstance(num_grids, int)
+
+        list_grids = []
+        for bound in self.bounds:
+            list_grids.append(np.linspace(bound[0], bound[1], num_grids))
+        list_grids_mesh = list(np.meshgrid(*list_grids))
+        list_grids = []
+        for elem in list_grids_mesh:
+            list_grids.append(elem.flatten(order='C'))
+        grids = np.vstack(tuple(list_grids))
+        grids = grids.T
+        return grids
