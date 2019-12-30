@@ -3,9 +3,9 @@ import numpy as np
 from benchmarks.benchmark_base import Function
 
 
-def fun_target(bx, num_dim, slope):
+def fun_target(bx, dim_bx, slope):
     assert len(bx.shape) == 1
-    assert bx.shape[0] == num_dim
+    assert bx.shape[0] == dim_bx
     assert isinstance(slope, float)
 
     y = slope * bx[0]
@@ -18,7 +18,7 @@ class Linear(Function):
     ):
         assert isinstance(slope, float)
 
-        num_dim = 1
+        dim_bx = 1
         bounds = np.array([
             [-10, 10],
         ])
@@ -26,7 +26,7 @@ class Linear(Function):
             [slope * -10],
         ])
         global_minimum = slope * -10.0
-        function = lambda bx: fun_target(bx, num_dim, slope)
+        function = lambda bx: fun_target(bx, dim_bx, slope)
 
-        Function.__init__(self, num_dim, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
 

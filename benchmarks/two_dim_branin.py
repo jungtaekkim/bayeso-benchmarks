@@ -3,9 +3,9 @@ import numpy as np
 from benchmarks.benchmark_base import Function
 
 
-def fun_target(bx, num_dim, a, b, c, r, s, t):
+def fun_target(bx, dim_bx, a, b, c, r, s, t):
     assert len(bx.shape) == 1
-    assert bx.shape[0] == num_dim
+    assert bx.shape[0] == dim_bx
     assert isinstance(a, float)
     assert isinstance(b, float)
     assert isinstance(c, float)
@@ -33,7 +33,7 @@ class Branin(Function):
         assert isinstance(s, float)
         assert isinstance(t, float)
 
-        num_dim = 2
+        dim_bx = 2
         bounds = np.array([
             [-5, 10],
             [0, 15],
@@ -44,7 +44,7 @@ class Branin(Function):
             [9.42478, 2.475],
         ])
         global_minimum = 0.397887
-        function = lambda bx: fun_target(bx, num_dim, a, b, c, r, s, t)
+        function = lambda bx: fun_target(bx, dim_bx, a, b, c, r, s, t)
 
-        Function.__init__(self, num_dim, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
 

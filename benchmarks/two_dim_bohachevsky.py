@@ -7,24 +7,21 @@ def fun_target(bx, dim_bx):
     assert len(bx.shape) == 1
     assert bx.shape[0] == dim_bx
 
-    y = -1.0 * np.abs(np.sin(bx[0]) * np.cos(bx[1]) * np.exp(np.abs(1.0 - np.sqrt(bx[0]**2 + bx[1]**2) / np.pi)))
+    y = bx[0]**2 + 2.0 * bx[1]**2 - 0.3 * np.cos(3.0 * np.pi * bx[0]) - 0.4 * np.cos(4.0 * np.pi * bx[1]) + 0.7
     return y
 
 
-class HolderTable(Function):
+class Bohachevsky(Function):
     def __init__(self):
         dim_bx = 2
         bounds = np.array([
-            [-10.0, 10.0],
-            [-10.0, 10.0],
+            [-100.0, 100.0],
+            [-100.0, 100.0],
         ])
         global_minimizers = np.array([
-            [8.05502, 9.66459],
-            [8.05502, -9.66459],
-            [-8.05502, 9.66459],
-            [-8.05502, -9.66459],
+            [0.0, 0.0],
         ])
-        global_minimum = -19.2085
+        global_minimum = 0.0
         function = lambda bx: fun_target(bx, dim_bx)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)

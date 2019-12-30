@@ -3,9 +3,9 @@ import numpy as np
 from benchmarks.benchmark_base import Function
 
 
-def fun_target(bx, num_dim):
+def fun_target(bx, dim_bx):
     assert len(bx.shape) == 1
-    assert bx.shape[0] == num_dim
+    assert bx.shape[0] == dim_bx
 
     alpha = np.array([1.0, 1.2, 3.0, 3.2])
     A = np.array([
@@ -47,14 +47,14 @@ class Hartmann6D(Function):
         assert len(bounds.shape) == 2
         assert bounds.shape[1] == 2
 
-        num_dim = 6
-        assert bounds.shape[0] == num_dim
+        dim_bx = 6
+        assert bounds.shape[0] == dim_bx
 
         global_minimizers = np.array([
             [0.20169, 0.150011, 0.476874, 0.275332, 0.311652, 0.6573],
         ])
         global_minimum = -3.322368
-        function = lambda bx: fun_target(bx, num_dim)
+        function = lambda bx: fun_target(bx, dim_bx)
 
-        Function.__init__(self, num_dim, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
 

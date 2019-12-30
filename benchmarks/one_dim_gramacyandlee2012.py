@@ -7,24 +7,20 @@ def fun_target(bx, dim_bx):
     assert len(bx.shape) == 1
     assert bx.shape[0] == dim_bx
 
-    y = -1.0 * np.abs(np.sin(bx[0]) * np.cos(bx[1]) * np.exp(np.abs(1.0 - np.sqrt(bx[0]**2 + bx[1]**2) / np.pi)))
+    y = np.sin(10.0 * np.pi * bx[0]) / (2 * bx[0]) + (bx[0] - 1.0)**4
     return y
 
 
-class HolderTable(Function):
+class GramacyAndLee2012(Function):
     def __init__(self):
-        dim_bx = 2
+        dim_bx = 1
         bounds = np.array([
-            [-10.0, 10.0],
-            [-10.0, 10.0],
+            [0.5, 2.5],
         ])
         global_minimizers = np.array([
-            [8.05502, 9.66459],
-            [8.05502, -9.66459],
-            [-8.05502, 9.66459],
-            [-8.05502, -9.66459],
+            [0.54856405],
         ])
-        global_minimum = -19.2085
+        global_minimum = -0.86901113
         function = lambda bx: fun_target(bx, dim_bx)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
