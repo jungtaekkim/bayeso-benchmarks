@@ -43,6 +43,12 @@ If you would like to uninstall bayeso-benchmarks, command it.
 $ pip uninstall bayeso-benchmarks
 ```
 
+## Required Packages
+Mandatory pacakges are inlcuded in `requirements.txt`.
+The following `requirements` files include the package list, the purpose of which is described as follows.
+
+* `requirements-dev.txt`: It is for developing the `bayeso` package.
+
 ## Author
 * [Jungtaek Kim](http://mlg.postech.ac.kr/~jtkim/) (POSTECH)
 
