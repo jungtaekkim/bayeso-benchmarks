@@ -14,7 +14,7 @@ def fun_target(bx, dim_bx,
     assert isinstance(b, float)
     assert isinstance(c, float)
 
-    y = -a * np.exp(-b * np.linalg.norm(bx, ord=2, axis=1) * np.sqrt(1.0 / dim_bx)) - np.exp(1.0 / dim_bx * np.sum(np.cos(c * bx), axis=1)) + a + np.exp(1.0)
+    y = -a * np.exp(-b * np.linalg.norm(bx, ord=2, axis=0) * np.sqrt(1.0 / dim_bx)) - np.exp(1.0 / dim_bx * np.sum(np.cos(c * bx), axis=0)) + a + np.exp(1.0)
     return y
 
 

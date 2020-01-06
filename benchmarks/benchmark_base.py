@@ -41,6 +41,22 @@ class Function(object):
     def global_minimum(self):
         return self._global_minimum
 
+    def get_bounds(self):
+        if self.dimensionality is np.inf:
+            return np.array(list(self.bounds) * self.dim_problem)
+        else:
+            return self.bounds
+
+    def get_global_minimizers(self):
+        if self.dimensionality is np.inf:
+            global_minimizers = self.global_minimizers
+            for _ in range(1, self.dim_problem):
+                global_minimizers = np.concatenate((global_minimizers, self.global_minimizers), axis=1)
+
+            return global_minimizers
+        else:
+            return self.global_minimizers
+
     def function(self, bx):
         if self.dimensionality is np.inf:
             assert self.dim_problem is bx.shape[0]
@@ -63,18 +79,20 @@ class Function(object):
         return Y
 
     def validate_properties(self):
-        shape_bounds = self.bounds.shape
-        shape_global_minimizers = self.global_minimizers.shape
+        shape_bounds = self.get_bounds().shape
+
+        global_minimizers = self.get_global_minimizers()
+        shape_global_minimizers = global_minimizers.shape
 
         assert len(shape_bounds) == 2
         assert shape_bounds[1] == 2
         assert len(shape_global_minimizers) == 2
 
-        print(self.output(self.global_minimizers))
-        assert np.all((self.output(self.global_minimizers) - self.global_minimum) < EPSILON)
+        print(self.output(global_minimizers))
+        assert np.all((self.output(global_minimizers) - self.global_minimum) < EPSILON)
 
         if self.dimensionality is np.inf:
-            pass
+            assert shape_bounds[0] == shape_global_minimizers[1]
         else:
             assert self.dimensionality == shape_bounds[0] == shape_global_minimizers[1]
 
