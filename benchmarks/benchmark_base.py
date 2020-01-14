@@ -78,6 +78,63 @@ class Function(object):
 
         return Y
 
+    def output_constant_noise(self, X, scale_noise=0.01):
+        assert isinstance(X, np.ndarray)
+        assert isinstance(scale_noise, float)
+
+        if len(X.shape) == 2:
+            list_results = [self.function(bx) for bx in X]
+        else:
+            list_results = [self.function(X)]
+            
+        by = np.array(list_results)
+        by += scale_noise
+
+        Y = np.expand_dims(by, axis=1)
+
+        return Y
+
+    def output_gaussian_noise(self, X, scale_noise=0.01):
+        assert isinstance(X, np.ndarray)
+        assert isinstance(scale_noise, float)
+
+        if len(X.shape) == 2:
+            list_results = [self.function(bx) for bx in X]
+        else:
+            list_results = [self.function(X)]
+            
+        by = np.array(list_results)
+        by += scale_noise * np.random.randn(by.shape[0])
+
+        Y = np.expand_dims(by, axis=1)
+
+        return Y
+
+    def output_sparse_gaussian_noise(self, X, scale_noise=0.1, sparsity=0.01):
+        assert isinstance(X, np.ndarray)
+        assert isinstance(scale_noise, float)
+        assert isinstance(sparsity, float)
+
+        if len(X.shape) == 2:
+            num_X = X.shape[0]
+            list_results = [self.function(bx) for bx in X]
+        else:
+            num_X = 1
+            list_results = [self.function(X)]
+            
+        by = np.array(list_results)
+
+        noise = np.zeros(num_X)
+
+        num_noise = np.round(num_X * sparsity).astype(np.int)
+        indices_noise = np.random.choice(num_X, num_noise, replace=False)
+        noise[indices_noise] = np.random.randn(num_noise)
+        by += scale_noise * noise
+
+        Y = np.expand_dims(by, axis=1)
+
+        return Y
+
     def validate_properties(self):
         shape_bounds = self.get_bounds().shape
 
