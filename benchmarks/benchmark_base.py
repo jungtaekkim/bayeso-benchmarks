@@ -157,7 +157,7 @@ class Function(object):
         assert isinstance(num_grids, int)
 
         list_grids = []
-        for bound in self.bounds:
+        for bound in self.get_bounds():
             list_grids.append(np.linspace(bound[0], bound[1], num_grids))
         list_grids_mesh = list(np.meshgrid(*list_grids))
         list_grids = []
