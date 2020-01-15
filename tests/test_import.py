@@ -10,6 +10,10 @@ def test_import_one_dim_gramacyandlee2012():
     from benchmarks.one_dim_gramacyandlee2012 import GramacyAndLee2012
 
 def test_import_one_dim_linear():
+    import benchmarks.one_dim_constant
+    from benchmarks.one_dim_constatn import Constant
+
+def test_import_one_dim_linear():
     import benchmarks.one_dim_linear
     from benchmarks.one_dim_linear import Linear
 
