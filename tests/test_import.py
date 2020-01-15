@@ -5,17 +5,21 @@ def test_import_benchmark_base():
     import benchmarks.benchmark_base
     from benchmarks.benchmark_base import Function
 
+def test_import_one_dim_constant():
+    import benchmarks.one_dim_constant
+    from benchmarks.one_dim_constant import Constant
+
 def test_import_one_dim_gramacyandlee2012():
     import benchmarks.one_dim_gramacyandlee2012
     from benchmarks.one_dim_gramacyandlee2012 import GramacyAndLee2012
 
 def test_import_one_dim_linear():
-    import benchmarks.one_dim_constant
-    from benchmarks.one_dim_constatn import Constant
-
-def test_import_one_dim_linear():
     import benchmarks.one_dim_linear
     from benchmarks.one_dim_linear import Linear
+
+def test_import_one_dim_step():
+    import benchmarks.one_dim_step
+    from benchmarks.one_dim_step import Step
 
 def test_import_two_dim_beale():
     import benchmarks.two_dim_beale
