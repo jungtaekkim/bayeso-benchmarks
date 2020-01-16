@@ -76,6 +76,8 @@ class Function(object):
         by = np.array(list_results)
         Y = np.expand_dims(by, axis=1)
 
+        assert len(Y.shape) == 2
+        assert Y.shape[1] == 1
         return Y
 
     def output_constant_noise(self, X, scale_noise=0.01):
@@ -92,6 +94,8 @@ class Function(object):
 
         Y = np.expand_dims(by, axis=1)
 
+        assert len(Y.shape) == 2
+        assert Y.shape[1] == 1
         return Y
 
     def output_gaussian_noise(self, X, scale_noise=0.01):
@@ -108,12 +112,15 @@ class Function(object):
 
         Y = np.expand_dims(by, axis=1)
 
+        assert len(Y.shape) == 2
+        assert Y.shape[1] == 1
         return Y
 
     def output_sparse_gaussian_noise(self, X, scale_noise=0.1, sparsity=0.01):
         assert isinstance(X, np.ndarray)
         assert isinstance(scale_noise, float)
         assert isinstance(sparsity, float)
+        assert sparsity < 0.5
 
         if len(X.shape) == 2:
             num_X = X.shape[0]
@@ -133,6 +140,8 @@ class Function(object):
 
         Y = np.expand_dims(by, axis=1)
 
+        assert len(Y.shape) == 2
+        assert Y.shape[1] == 1
         return Y
 
     def validate_properties(self):
@@ -144,8 +153,6 @@ class Function(object):
         assert len(shape_bounds) == 2
         assert shape_bounds[1] == 2
         assert len(shape_global_minimizers) == 2
-
-        print(self.output(global_minimizers))
         assert np.all((self.output(global_minimizers) - self.global_minimum) < EPSILON)
 
         if self.dimensionality is np.inf:

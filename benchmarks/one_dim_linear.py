@@ -13,19 +13,24 @@ def fun_target(bx, dim_bx, slope):
 
 
 class Linear(Function):
-    def __init__(self,  
+    def __init__(self,
+        bounds=np.array([
+            [-10, 10],
+        ]),
         slope=1.0
     ):
         assert isinstance(slope, float)
+        assert isinstance(bounds, np.ndarray)
+        assert len(bounds.shape) == 2
+        assert bounds.shape[0] == 1
+        assert bounds.shape[1] == 2
+        assert bounds[0, 0] < bounds[0, 1]
 
-        dim_bx = 1
-        bounds = np.array([
-            [-10, 10],
-        ])
+        dim_bx = bounds.shape[0]
         global_minimizers = np.array([
-            [slope * -10],
+            [slope * bounds[0, 0]],
         ])
-        global_minimum = slope * -10.0
+        global_minimum = slope * bounds[0, 0]
         function = lambda bx: fun_target(bx, dim_bx, slope)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)

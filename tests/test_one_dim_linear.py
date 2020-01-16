@@ -9,13 +9,22 @@ TEST_EPSILON = 1e-5
 
 
 def test_init():
+    bounds = np.array([[0.0, 10.0]])
     obj_fun = class_fun()
-    obj_fun = class_fun(2.0)
+    obj_fun = class_fun(bounds=bounds, slope=2.0)
 
     with pytest.raises(AssertionError) as error:
-        class_fun(2)
+        class_fun(bounds=2)
     with pytest.raises(AssertionError) as error:
-        class_fun('abc')
+        class_fun(bounds=np.array([0.0, 10.0]))
+    with pytest.raises(AssertionError) as error:
+        class_fun(bounds=[0.0, 10.0])
+    with pytest.raises(AssertionError) as error:
+        class_fun(bounds=np.array([[10.0, 0.0]]))
+    with pytest.raises(AssertionError) as error:
+        class_fun(slope=2)
+    with pytest.raises(AssertionError) as error:
+        class_fun(slope='abc')
 
 def test_validate_properties():
     obj_fun = class_fun()
