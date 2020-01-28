@@ -120,6 +120,7 @@ class Function(object):
         assert isinstance(X, np.ndarray)
         assert isinstance(scale_noise, float)
         assert isinstance(sparsity, float)
+        assert sparsity >= 0.0 and sparsity <= 1.0
         assert sparsity < 0.5
 
         if len(X.shape) == 2:
@@ -131,11 +132,9 @@ class Function(object):
             
         by = np.array(list_results)
 
-        noise = np.zeros(num_X)
-
-        num_noise = np.round(num_X * sparsity).astype(np.int)
-        indices_noise = np.random.choice(num_X, num_noise, replace=False)
-        noise[indices_noise] = np.random.randn(num_noise)
+        noise = np.random.randn(num_X)
+        mask = np.random.uniform(low=0.0, high=1.0, size=num_X) < sparsity
+        noise *= mask.astype(np.float)
         by += scale_noise * noise
 
         Y = np.expand_dims(by, axis=1)
