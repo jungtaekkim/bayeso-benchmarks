@@ -30,6 +30,18 @@ def test_validate_properties():
     obj_fun = class_fun()
     obj_fun.validate_properties()
 
+    obj_fun = class_fun(bounds=np.array([[2.0, 10.0]]), slope=2.0)
+    obj_fun.validate_properties()
+
+    obj_fun = class_fun(bounds=np.array([[2.0, 10.0]]), slope=-2.0)
+    obj_fun.validate_properties()
+
+    obj_fun = class_fun(bounds=np.array([[-10.0, 2.0]]), slope=2.0)
+    obj_fun.validate_properties()
+
+    obj_fun = class_fun(bounds=np.array([[-10.0, 2.0]]), slope=-2.0)
+    obj_fun.validate_properties()
+
 def test_output():
     obj_fun = class_fun()
     bounds = obj_fun.get_bounds()

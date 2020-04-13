@@ -27,10 +27,17 @@ class Linear(Function):
         assert bounds[0, 0] < bounds[0, 1]
 
         dim_bx = bounds.shape[0]
-        global_minimizers = np.array([
-            [slope * bounds[0, 0]],
-        ])
-        global_minimum = slope * bounds[0, 0]
+
+        if slope > 0.0:
+            global_minimizers = np.array([
+                [bounds[0, 0]],
+            ])
+            global_minimum = slope * bounds[0, 0]
+        else:
+            global_minimizers = np.array([
+                [bounds[0, 1]],
+            ])
+            global_minimum = slope * bounds[0, 1]
         function = lambda bx: fun_target(bx, dim_bx, slope)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
