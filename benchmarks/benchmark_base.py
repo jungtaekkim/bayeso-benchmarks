@@ -1,6 +1,6 @@
 import numpy as np
 
-EPSILON = 1e-6
+EPSILON = 1e-4
 
 
 class Function(object):
@@ -152,7 +152,7 @@ class Function(object):
         assert len(shape_bounds) == 2
         assert shape_bounds[1] == 2
         assert len(shape_global_minimizers) == 2
-        assert np.all((self.output(global_minimizers) - self.global_minimum) < EPSILON)
+        assert np.all(np.abs(self.output(global_minimizers) - self.global_minimum) < EPSILON)
 
         if self.dimensionality is np.inf:
             assert shape_bounds[0] == shape_global_minimizers[1]
