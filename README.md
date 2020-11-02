@@ -1,4 +1,4 @@
-# bayeso-benchmarks
+# BayesO-benchmarks
 [![Build Status](https://travis-ci.org/jungtaekkim/bayeso-benchmarks.svg?branch=master)](https://travis-ci.org/jungtaekkim/bayeso-benchmarks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -37,7 +37,7 @@ in the `bayeso-benchmarks` root.
 
 * Uninstallation
 
-If you would like to uninstall bayeso-benchmarks, command it.
+If you would like to uninstall `bayeso-benchmarks`, command it.
 
 ```shell
 $ pip uninstall bayeso-benchmarks
