@@ -47,4 +47,3 @@ class Branin(Function):
         function = lambda bx: fun_target(bx, dim_bx, a, b, c, r, s, t)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
-

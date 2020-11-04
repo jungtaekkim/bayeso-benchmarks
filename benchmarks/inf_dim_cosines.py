@@ -28,4 +28,3 @@ class Cosines(Function):
         function = lambda bx: fun_target(bx, dim_problem)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, dim_problem=dim_problem)
-

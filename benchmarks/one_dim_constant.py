@@ -37,4 +37,3 @@ class Constant(Function):
         function = lambda bx: fun_target(bx, dim_bx, constant)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
-

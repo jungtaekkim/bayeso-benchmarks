@@ -49,6 +49,14 @@ def test_import_two_dim_sixhumpcamel():
     import benchmarks.two_dim_sixhumpcamel
     from benchmarks.two_dim_sixhumpcamel import SixHumpCamel
 
+def test_import_two_dim_threehumpcamel():
+    import benchmarks.two_dim_threehumpcamel
+    from benchmarks.two_dim_threehumpcamel import ThreeHumpCamel
+
+def test_import_three_dim_hartmann3d():
+    import benchmarks.three_dim_hartmann3d
+    from benchmarks.three_dim_hartmann3d import Hartmann3D
+
 def test_import_six_dim_hartmann6d():
     import benchmarks.six_dim_hartmann6d
     from benchmarks.six_dim_hartmann6d import Hartmann6D
@@ -64,4 +72,3 @@ def test_import_inf_dim_rosenbrock():
 def test_import_inf_dim_sphere():
     import benchmarks.inf_dim_sphere
     from benchmarks.inf_dim_sphere import Sphere
-

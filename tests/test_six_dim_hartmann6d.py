@@ -756,4 +756,3 @@ def test_output():
     print(obj_fun.output(grids))
     print(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
     assert np.all(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
-

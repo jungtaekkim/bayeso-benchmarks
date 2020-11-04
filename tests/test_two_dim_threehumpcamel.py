@@ -1,9 +1,9 @@
 import numpy as np
 import pytest
 
-from benchmarks.two_dim_holdertable import *
+from benchmarks.two_dim_threehumpcamel import *
 
-class_fun = HolderTable
+class_fun = ThreeHumpCamel
 
 TEST_EPSILON = 1e-5
 
@@ -21,15 +21,15 @@ def test_output():
 
     grids = obj_fun.get_grids(3)
     truths_grids = np.array([
-        [-15.14022386],
-        [0.],
-        [-15.14022386],
-        [-4.827514],
-        [-0.],
-        [-4.827514],
-        [-15.14022386],
-        [0.],
-        [-15.14022386],
+        [2047.91666667],
+        [25.0],
+        [1997.91666667],
+        [1997.91666667],
+        [0.0],
+        [1997.91666667],
+        [1997.91666667],
+        [25.0],
+        [2047.91666667],
     ])
     
     print(grids)
