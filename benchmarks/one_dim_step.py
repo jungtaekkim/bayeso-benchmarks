@@ -1,3 +1,8 @@
+#
+# author: Jungtaek Kim (jtkim@postech.ac.kr)
+# last updated: November 5, 2020
+#
+
 import numpy as np
 
 from benchmarks.benchmark_base import Function
