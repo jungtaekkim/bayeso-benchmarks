@@ -1,9 +1,9 @@
-# BayesO-benchmarks
+# BayesO Benchmarks
 [![Build Status](https://travis-ci.org/jungtaekkim/bayeso-benchmarks.svg?branch=master)](https://travis-ci.org/jungtaekkim/bayeso-benchmarks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Benchmarks for Bayesian optimization.
-The details can be found in [these notes](http://jungtaek.github.io/notes/benchmarks_bo.pdf).
+The details of benchmark functions can be found in [these notes](http://jungtaek.github.io/notes/benchmarks_bo.pdf).
 
 ## Installation
 We recommend it should be installed in `virtualenv`.

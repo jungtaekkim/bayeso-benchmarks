@@ -45,6 +45,10 @@ def test_import_two_dim_holdertable():
     import benchmarks.two_dim_holdertable
     from benchmarks.two_dim_holdertable import HolderTable
 
+def test_import_two_dim_michalewicz():
+    import benchmarks.two_dim_michalewicz
+    from benchmarks.two_dim_michalewicz import Michalewicz
+
 def test_import_two_dim_sixhumpcamel():
     import benchmarks.two_dim_sixhumpcamel
     from benchmarks.two_dim_sixhumpcamel import SixHumpCamel
