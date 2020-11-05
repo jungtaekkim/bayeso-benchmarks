@@ -3,7 +3,7 @@
 # last updated: November 5, 2020
 #
 
-STR_VERSION = '0.1.3'
+STR_VERSION = '0.1.4'
 
 
 def test_version_bayeso():

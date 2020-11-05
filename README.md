@@ -51,7 +51,7 @@ The following `requirements` files include the package list, the purpose of whic
 * `requirements-dev.txt`: It is for developing the `bayeso-benchmarks` package.
 
 ## Author
-* [Jungtaek Kim](http://mlg.postech.ac.kr/~jtkim/) (POSTECH)
+* [Jungtaek Kim](http://jungtaek.github.io) (POSTECH)
 
 ## Contact
 * Jungtaek Kim: [jtkim@postech.ac.kr](mailto:jtkim@postech.ac.kr)
