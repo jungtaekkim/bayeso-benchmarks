@@ -1,14 +1,14 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 import pytest
 
-from benchmarks.two_dim_branin import *
-from benchmarks.two_dim_eggholder import *
-from benchmarks.two_dim_michalewicz import *
+from bayeso_benchmarks.two_dim_branin import *
+from bayeso_benchmarks.two_dim_eggholder import *
+from bayeso_benchmarks.two_dim_michalewicz import *
 
 TEST_EPSILON = 1e-5
 

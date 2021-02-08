@@ -1,33 +1,40 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 
-from benchmarks.benchmark_base import Function
+from bayeso_benchmarks.benchmark_base import Function
 
 
-def fun_target(bx, dim_bx):
+def fun_target(bx, dim_bx,
+    a=20.0,
+    b=0.2,
+    c=2.0*np.pi
+):
     assert len(bx.shape) == 1
     assert bx.shape[0] == dim_bx
+    assert isinstance(a, float)
+    assert isinstance(b, float)
+    assert isinstance(c, float)
 
-    y = np.sum(np.cos(bx) * (np.abs(bx) * (0.1 / (2.0 * np.pi)) - 1.0))
+    y = -a * np.exp(-b * np.linalg.norm(bx, ord=2, axis=0) * np.sqrt(1.0 / dim_bx)) - np.exp(1.0 / dim_bx * np.sum(np.cos(c * bx), axis=0)) + a + np.exp(1.0)
     return y
 
 
-class Cosines(Function):
+class Ackley(Function):
     def __init__(self, dim_problem):
         assert isinstance(dim_problem, int)
 
         dim_bx = np.inf
         bounds = np.array([
-            [-2.0 * np.pi, 2.0 * np.pi],
+            [-32.768, 32.768],
         ])
         global_minimizers = np.array([
             [0.0],
         ])
-        global_minimum = -1.0 * dim_problem
+        global_minimum = 0.0
         dim_problem = dim_problem
 
         function = lambda bx: fun_target(bx, dim_problem)

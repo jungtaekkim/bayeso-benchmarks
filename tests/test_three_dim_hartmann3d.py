@@ -1,12 +1,12 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 import pytest
 
-from benchmarks.three_dim_hartmann3d import *
+from bayeso_benchmarks.three_dim_hartmann3d import *
 
 class_fun = Hartmann3D
 

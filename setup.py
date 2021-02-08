@@ -1,7 +1,7 @@
 from setuptools import setup
 
 path_requirements = 'requirements.txt'
-list_packages = ['benchmarks']
+list_packages = ['bayeso_benchmarks']
 
 with open(path_requirements) as f:
     required = f.read().splitlines()

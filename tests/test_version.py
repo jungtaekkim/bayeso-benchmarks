@@ -1,14 +1,14 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 STR_VERSION = '0.1.4'
 
 
 def test_version_bayeso():
-    import benchmarks
-    assert benchmarks.__version__ == STR_VERSION
+    import bayeso_benchmarks
+    assert bayeso_benchmarks.__version__ == STR_VERSION
 
 def test_version_setup():
     import pkg_resources

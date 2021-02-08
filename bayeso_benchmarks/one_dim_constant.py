@@ -1,11 +1,11 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 
-from benchmarks.benchmark_base import Function
+from bayeso_benchmarks.benchmark_base import Function
 
 
 def fun_target(bx, dim_bx, constant):

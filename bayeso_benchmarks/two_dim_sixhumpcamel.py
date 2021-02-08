@@ -1,31 +1,33 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 
-from benchmarks.benchmark_base import Function
+from bayeso_benchmarks.benchmark_base import Function
 
 
 def fun_target(bx, dim_bx):
     assert len(bx.shape) == 1
     assert bx.shape[0] == dim_bx
 
-    y = np.sin(10.0 * np.pi * bx[0]) / (2 * bx[0]) + (bx[0] - 1.0)**4
+    y = (4.0 - 2.1 * bx[0]**2 + bx[0]**4 / 3.0) * bx[0]**2 + bx[0] * bx[1] + (-4.0 + 4.0 * bx[1]**2) * bx[1]**2
     return y
 
 
-class GramacyAndLee2012(Function):
+class SixHumpCamel(Function):
     def __init__(self):
-        dim_bx = 1
+        dim_bx = 2
         bounds = np.array([
-            [0.5, 2.5],
+            [-3.0, 3.0],
+            [-2.0, 2.0],
         ])
         global_minimizers = np.array([
-            [0.54856405],
+            [0.0898, -0.7126],
+            [-0.0898, 0.7126],
         ])
-        global_minimum = -0.86901113
+        global_minimum = -1.0316
         function = lambda bx: fun_target(bx, dim_bx)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
