@@ -112,7 +112,7 @@ def plot_2d(obj_fun,
 if __name__ == '__main__':
     from one_dim_gramacyandlee2012 import GramacyAndLee2012 as target_class
     obj_fun = target_class()
-    plot_1d(obj_fun, 'gramancyandlee2012')
+    plot_1d(obj_fun, 'gramacyandlee2012')
 
     from inf_dim_ackley import Ackley as target_class
     obj_fun = target_class(1)

@@ -104,6 +104,7 @@ class Function(object):
 
     def output_gaussian_noise(self, X, scale_noise=0.01):
         assert isinstance(scale_noise, float)
+
         by = self._output(X)
         by += scale_noise * self.random_state.randn(by.shape[0])
 
