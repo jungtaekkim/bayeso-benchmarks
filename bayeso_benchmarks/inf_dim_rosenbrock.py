@@ -22,6 +22,7 @@ def fun_target(bx, dim_bx):
 class Rosenbrock(Function):
     def __init__(self, dim_problem):
         assert isinstance(dim_problem, int)
+        assert dim_problem > 1
 
         dim_bx = np.inf
         bounds = np.array([

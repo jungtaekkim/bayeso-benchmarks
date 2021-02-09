@@ -9,7 +9,7 @@ EPSILON = 1e-4
 
 
 class Function(object):
-    def __init__(self, dimensionality, bounds, global_minimizers, global_minimum, function, dim_problem=None):
+    def __init__(self, dimensionality, bounds, global_minimizers, global_minimum, function, dim_problem=None, seed=None):
         assert isinstance(dimensionality, int) or dimensionality is np.inf
         assert isinstance(bounds, np.ndarray)
         assert isinstance(global_minimizers, np.ndarray)
@@ -27,6 +27,7 @@ class Function(object):
         self._function = function
 
         self.dim_problem = dim_problem
+        self.random_state = np.random.RandomState(seed)
 
         self.validate_properties()
 
@@ -70,7 +71,7 @@ class Function(object):
 
         return self._function(bx)
 
-    def output(self, X):
+    def _output(self, X):
         assert isinstance(X, np.ndarray)
 
         if len(X.shape) == 2:
@@ -79,6 +80,10 @@ class Function(object):
             list_results = [self.function(X)]
             
         by = np.array(list_results)
+        return by
+
+    def output(self, X):
+        by = self._output(X)
         Y = np.expand_dims(by, axis=1)
 
         assert len(Y.shape) == 2
@@ -86,15 +91,9 @@ class Function(object):
         return Y
 
     def output_constant_noise(self, X, scale_noise=0.01):
-        assert isinstance(X, np.ndarray)
         assert isinstance(scale_noise, float)
 
-        if len(X.shape) == 2:
-            list_results = [self.function(bx) for bx in X]
-        else:
-            list_results = [self.function(X)]
-            
-        by = np.array(list_results)
+        by = self._output(X)
         by += scale_noise
 
         Y = np.expand_dims(by, axis=1)
@@ -104,16 +103,9 @@ class Function(object):
         return Y
 
     def output_gaussian_noise(self, X, scale_noise=0.01):
-        assert isinstance(X, np.ndarray)
         assert isinstance(scale_noise, float)
-
-        if len(X.shape) == 2:
-            list_results = [self.function(bx) for bx in X]
-        else:
-            list_results = [self.function(X)]
-            
-        by = np.array(list_results)
-        by += scale_noise * np.random.randn(by.shape[0])
+        by = self._output(X)
+        by += scale_noise * self.random_state.randn(by.shape[0])
 
         Y = np.expand_dims(by, axis=1)
 
@@ -122,23 +114,20 @@ class Function(object):
         return Y
 
     def output_sparse_gaussian_noise(self, X, scale_noise=0.1, sparsity=0.01):
-        assert isinstance(X, np.ndarray)
         assert isinstance(scale_noise, float)
         assert isinstance(sparsity, float)
         assert sparsity >= 0.0 and sparsity <= 1.0
         assert sparsity < 0.5
 
+        by = self._output(X)
+
         if len(X.shape) == 2:
             num_X = X.shape[0]
-            list_results = [self.function(bx) for bx in X]
         else:
             num_X = 1
-            list_results = [self.function(X)]
             
-        by = np.array(list_results)
-
-        noise = np.random.randn(num_X)
-        mask = np.random.uniform(low=0.0, high=1.0, size=num_X) < sparsity
+        noise = self.random_state.randn(num_X)
+        mask = self.random_state.uniform(low=0.0, high=1.0, size=num_X) < sparsity
         noise *= mask.astype(np.float)
         by += scale_noise * noise
 
