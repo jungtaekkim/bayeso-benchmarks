@@ -39,6 +39,10 @@ def test_import_two_dim_branin():
     import bayeso_benchmarks.two_dim_branin
     from bayeso_benchmarks.two_dim_branin import Branin
 
+def test_import_two_dim_dropwave():
+    import bayeso_benchmarks.two_dim_dropwave
+    from bayeso_benchmarks.two_dim_dropwave import DropWave
+
 def test_import_two_dim_eggholder():
     import bayeso_benchmarks.two_dim_eggholder
     from bayeso_benchmarks.two_dim_eggholder import Eggholder
