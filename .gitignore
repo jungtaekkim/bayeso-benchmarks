@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Jungtaek
-*.swp
 .DS_Store
 __MACOSX/
+*.swp

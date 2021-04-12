@@ -6,7 +6,7 @@ Benchmarks for Bayesian optimization.
 The details of benchmark functions can be found in [these notes](http://jungtaek.github.io/notes/benchmarks_bo.pdf).
 
 ## Installation
-We recommend installed it with `virtualenv`.
+We recommend installing it with `virtualenv`.
 You can choose one of three installation options.
 
 * Using PyPI repository (for user installation)
