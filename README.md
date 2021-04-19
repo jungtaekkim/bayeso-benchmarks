@@ -6,7 +6,7 @@ Benchmarks for Bayesian optimization.
 The details of benchmark functions can be found in [these notes](http://jungtaek.github.io/notes/benchmarks_bo.pdf).
 
 ## Installation
-We recommend it should be installed in `virtualenv`.
+We recommend installing it with `virtualenv`.
 You can choose one of three installation options.
 
 * Using PyPI repository (for user installation)
@@ -51,7 +51,7 @@ The following `requirements` files include the package list, the purpose of whic
 * `requirements-dev.txt`: It is for developing the `bayeso-benchmarks` package.
 
 ## Author
-* [Jungtaek Kim](http://mlg.postech.ac.kr/~jtkim/) (POSTECH)
+* [Jungtaek Kim](http://jungtaek.github.io) (POSTECH)
 
 ## Contact
 * Jungtaek Kim: [jtkim@postech.ac.kr](mailto:jtkim@postech.ac.kr)

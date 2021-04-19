@@ -1,14 +1,15 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 import pytest
 
-from benchmarks.two_dim_branin import *
-from benchmarks.two_dim_eggholder import *
-from benchmarks.two_dim_michalewicz import *
+from bayeso_benchmarks.two_dim_branin import *
+from bayeso_benchmarks.two_dim_eggholder import *
+from bayeso_benchmarks.two_dim_michalewicz import *
+from bayeso_benchmarks.two_dim_dejong5 import *
 
 TEST_EPSILON = 1e-5
 
@@ -52,5 +53,19 @@ def test_global_minimum_michalewicz():
 
     print(global_minimum_brute_force)
     print(grids[ind_minimum])
+    print(obj_fun.global_minimum - global_minimum_brute_force)
+    assert (obj_fun.global_minimum - global_minimum_brute_force) < TEST_EPSILON
+
+def test_global_minimum_dejong5():
+    class_fun = DeJong5
+
+    obj_fun = class_fun()
+    grids = obj_fun.get_grids(100)
+    vals_grids = obj_fun.output(grids)
+    ind_minimum = np.argmin(vals_grids)
+    global_minimum_brute_force = np.min(vals_grids)
+
+    print(global_minimum_brute_force)
+    print(grids[((vals_grids - global_minimum_brute_force) < TEST_EPSILON)[:, 0]])
     print(obj_fun.global_minimum - global_minimum_brute_force)
     assert (obj_fun.global_minimum - global_minimum_brute_force) < TEST_EPSILON

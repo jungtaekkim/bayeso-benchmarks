@@ -1,12 +1,12 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 import pytest
 
-from benchmarks.six_dim_hartmann6d import *
+from bayeso_benchmarks.six_dim_hartmann6d import *
 
 class_fun = Hartmann6D
 

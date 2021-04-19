@@ -1,84 +1,88 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 
 def test_import_benchmarks():
-    import benchmarks
+    import bayeso_benchmarks
 
 def test_import_benchmark_base():
-    import benchmarks.benchmark_base
-    from benchmarks.benchmark_base import Function
+    import bayeso_benchmarks.benchmark_base
+    from bayeso_benchmarks.benchmark_base import Function
 
 def test_import_one_dim_constant():
-    import benchmarks.one_dim_constant
-    from benchmarks.one_dim_constant import Constant
+    import bayeso_benchmarks.one_dim_constant
+    from bayeso_benchmarks.one_dim_constant import Constant
 
 def test_import_one_dim_gramacyandlee2012():
-    import benchmarks.one_dim_gramacyandlee2012
-    from benchmarks.one_dim_gramacyandlee2012 import GramacyAndLee2012
+    import bayeso_benchmarks.one_dim_gramacyandlee2012
+    from bayeso_benchmarks.one_dim_gramacyandlee2012 import GramacyAndLee2012
 
 def test_import_one_dim_linear():
-    import benchmarks.one_dim_linear
-    from benchmarks.one_dim_linear import Linear
+    import bayeso_benchmarks.one_dim_linear
+    from bayeso_benchmarks.one_dim_linear import Linear
 
 def test_import_one_dim_step():
-    import benchmarks.one_dim_step
-    from benchmarks.one_dim_step import Step
+    import bayeso_benchmarks.one_dim_step
+    from bayeso_benchmarks.one_dim_step import Step
 
 def test_import_two_dim_beale():
-    import benchmarks.two_dim_beale
-    from benchmarks.two_dim_beale import Beale
+    import bayeso_benchmarks.two_dim_beale
+    from bayeso_benchmarks.two_dim_beale import Beale
 
 def test_import_two_dim_bohachevsky():
-    import benchmarks.two_dim_bohachevsky
-    from benchmarks.two_dim_bohachevsky import Bohachevsky
+    import bayeso_benchmarks.two_dim_bohachevsky
+    from bayeso_benchmarks.two_dim_bohachevsky import Bohachevsky
 
 def test_import_two_dim_branin():
-    import benchmarks.two_dim_branin
-    from benchmarks.two_dim_branin import Branin
+    import bayeso_benchmarks.two_dim_branin
+    from bayeso_benchmarks.two_dim_branin import Branin
+
+def test_import_two_dim_dropwave():
+    import bayeso_benchmarks.two_dim_dropwave
+    from bayeso_benchmarks.two_dim_dropwave import DropWave
 
 def test_import_two_dim_eggholder():
-    import benchmarks.two_dim_eggholder
-    from benchmarks.two_dim_eggholder import Eggholder
+    import bayeso_benchmarks.two_dim_eggholder
+    from bayeso_benchmarks.two_dim_eggholder import Eggholder
 
 def test_import_two_dim_goldsteinprice():
-    import benchmarks.two_dim_goldsteinprice
-    from benchmarks.two_dim_goldsteinprice import GoldsteinPrice
+    import bayeso_benchmarks.two_dim_goldsteinprice
+    from bayeso_benchmarks.two_dim_goldsteinprice import GoldsteinPrice
 
 def test_import_two_dim_holdertable():
-    import benchmarks.two_dim_holdertable
-    from benchmarks.two_dim_holdertable import HolderTable
+    import bayeso_benchmarks.two_dim_holdertable
+    from bayeso_benchmarks.two_dim_holdertable import HolderTable
 
 def test_import_two_dim_michalewicz():
-    import benchmarks.two_dim_michalewicz
-    from benchmarks.two_dim_michalewicz import Michalewicz
+    import bayeso_benchmarks.two_dim_michalewicz
+    from bayeso_benchmarks.two_dim_michalewicz import Michalewicz
 
 def test_import_two_dim_sixhumpcamel():
-    import benchmarks.two_dim_sixhumpcamel
-    from benchmarks.two_dim_sixhumpcamel import SixHumpCamel
+    import bayeso_benchmarks.two_dim_sixhumpcamel
+    from bayeso_benchmarks.two_dim_sixhumpcamel import SixHumpCamel
 
 def test_import_two_dim_threehumpcamel():
-    import benchmarks.two_dim_threehumpcamel
-    from benchmarks.two_dim_threehumpcamel import ThreeHumpCamel
+    import bayeso_benchmarks.two_dim_threehumpcamel
+    from bayeso_benchmarks.two_dim_threehumpcamel import ThreeHumpCamel
 
 def test_import_three_dim_hartmann3d():
-    import benchmarks.three_dim_hartmann3d
-    from benchmarks.three_dim_hartmann3d import Hartmann3D
+    import bayeso_benchmarks.three_dim_hartmann3d
+    from bayeso_benchmarks.three_dim_hartmann3d import Hartmann3D
 
 def test_import_six_dim_hartmann6d():
-    import benchmarks.six_dim_hartmann6d
-    from benchmarks.six_dim_hartmann6d import Hartmann6D
+    import bayeso_benchmarks.six_dim_hartmann6d
+    from bayeso_benchmarks.six_dim_hartmann6d import Hartmann6D
 
 def test_import_inf_dim_ackley():
-    import benchmarks.inf_dim_ackley
-    from benchmarks.inf_dim_ackley import Ackley
+    import bayeso_benchmarks.inf_dim_ackley
+    from bayeso_benchmarks.inf_dim_ackley import Ackley
 
 def test_import_inf_dim_rosenbrock():
-    import benchmarks.inf_dim_rosenbrock
-    from benchmarks.inf_dim_rosenbrock import Rosenbrock
+    import bayeso_benchmarks.inf_dim_rosenbrock
+    from bayeso_benchmarks.inf_dim_rosenbrock import Rosenbrock
 
 def test_import_inf_dim_sphere():
-    import benchmarks.inf_dim_sphere
-    from benchmarks.inf_dim_sphere import Sphere
+    import bayeso_benchmarks.inf_dim_sphere
+    from bayeso_benchmarks.inf_dim_sphere import Sphere

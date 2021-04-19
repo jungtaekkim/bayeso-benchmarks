@@ -1,12 +1,12 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: February 8, 2021
 #
 
 import numpy as np
 import pytest
 
-from benchmarks.one_dim_gramacyandlee2012 import *
+from bayeso_benchmarks.one_dim_gramacyandlee2012 import *
 
 class_fun = GramacyAndLee2012
 
