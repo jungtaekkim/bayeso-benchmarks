@@ -1,9 +1,9 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# last updated: May 1, 2021
 #
 
-STR_VERSION = '0.1.4'
+STR_VERSION = '0.1.5'
 
 
 def test_version_bayeso():

@@ -111,79 +111,79 @@ def plot_2d(obj_fun,
 
 if __name__ == '__main__':
     # one dim.
-    from one_dim_gramacyandlee2012 import GramacyAndLee2012 as target_class
+    from bayeso_benchmarks.one_dim_gramacyandlee2012 import GramacyAndLee2012 as target_class
     obj_fun = target_class()
     plot_1d(obj_fun, 'gramacyandlee2012')
 
-    from inf_dim_ackley import Ackley as target_class
+    from bayeso_benchmarks.inf_dim_ackley import Ackley as target_class
     obj_fun = target_class(1)
     plot_1d(obj_fun, 'ackley_1d')
 
-    from inf_dim_cosines import Cosines as target_class
+    from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
     obj_fun = target_class(1)
     plot_1d(obj_fun, 'cosines_1d')
 
-    from inf_dim_sphere import Sphere as target_class
+    from bayeso_benchmarks.inf_dim_sphere import Sphere as target_class
     obj_fun = target_class(1)
     plot_1d(obj_fun, 'sphere_1d')
 
     # two dim.
-    from two_dim_beale import Beale as target_class
+    from bayeso_benchmarks.two_dim_beale import Beale as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'beale_2d')
 
-    from two_dim_bohachevsky import Bohachevsky as target_class
+    from bayeso_benchmarks.two_dim_bohachevsky import Bohachevsky as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'bohachevsky_2d')
 
-    from two_dim_branin import Branin as target_class
+    from bayeso_benchmarks.two_dim_branin import Branin as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'branin_2d')
 
-    from two_dim_dejong5 import DeJong5 as target_class
+    from bayeso_benchmarks.two_dim_dejong5 import DeJong5 as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'dejong5_2d')
 
-    from two_dim_dropwave import DropWave as target_class
+    from bayeso_benchmarks.two_dim_dropwave import DropWave as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'dropwave_2d')
 
-    from two_dim_eggholder import Eggholder as target_class
+    from bayeso_benchmarks.two_dim_eggholder import Eggholder as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'eggholder_2d')
 
-    from two_dim_goldsteinprice import GoldsteinPrice as target_class
+    from bayeso_benchmarks.two_dim_goldsteinprice import GoldsteinPrice as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'goldsteinprice_2d')
 
-    from two_dim_holdertable import HolderTable as target_class
+    from bayeso_benchmarks.two_dim_holdertable import HolderTable as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'holdertable_2d')
 
-    from two_dim_michalewicz import Michalewicz as target_class
+    from bayeso_benchmarks.two_dim_michalewicz import Michalewicz as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'michalewicz_2d')
 
-    from two_dim_sixhumpcamel import SixHumpCamel as target_class
+    from bayeso_benchmarks.two_dim_sixhumpcamel import SixHumpCamel as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'sixhumpcamel_2d')
 
-    from two_dim_threehumpcamel import ThreeHumpCamel as target_class
+    from bayeso_benchmarks.two_dim_threehumpcamel import ThreeHumpCamel as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'threehumpcamel_2d')
 
-    from inf_dim_ackley import Ackley as target_class
+    from bayeso_benchmarks.inf_dim_ackley import Ackley as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'ackley_2d')
 
-    from inf_dim_cosines import Cosines as target_class
+    from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'cosines_2d')
 
-    from inf_dim_rosenbrock import Rosenbrock as target_class
+    from bayeso_benchmarks.inf_dim_rosenbrock import Rosenbrock as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'rosenbrock_2d')
 
-    from inf_dim_sphere import Sphere as target_class
+    from bayeso_benchmarks.inf_dim_sphere import Sphere as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'sphere_2d')

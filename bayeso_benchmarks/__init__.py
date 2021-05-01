@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: November 5, 2020
+# last updated: May 1, 2021
 #
 
-__version__ = '0.1.4'
+__version__ = '0.1.5'
