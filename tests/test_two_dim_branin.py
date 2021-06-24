@@ -43,7 +43,7 @@ def test_output():
     obj_fun = class_fun()
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [308.12909601],
         [10.30790849],
@@ -65,7 +65,7 @@ def test_output_constant_noise():
     obj_fun = class_fun()
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [308.12909601],
         [10.30790849],
@@ -87,7 +87,7 @@ def test_output_gaussian_noise():
     obj_fun = class_fun(seed=SEED)
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [309.12252432],
         [10.03137988],
@@ -110,7 +110,7 @@ def test_output_sparse_gaussian_noise():
     obj_fun = class_fun(seed=SEED)
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [309.12252432],
         [10.03137988],
@@ -133,7 +133,7 @@ def test_output_student_t_noise():
     obj_fun = class_fun(seed=SEED)
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [309.27833061],
         [8.14452801],
@@ -156,7 +156,7 @@ def test_output_sparse_student_t_noise():
     obj_fun = class_fun(seed=SEED)
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [309.27833061],
         [8.14452801],

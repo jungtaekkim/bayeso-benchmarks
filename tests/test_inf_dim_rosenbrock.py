@@ -31,7 +31,7 @@ def test_output():
     obj_fun = class_fun(3)
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [7.81185245e+03],
         [5.67443514e+03],

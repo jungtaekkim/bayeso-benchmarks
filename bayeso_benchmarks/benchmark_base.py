@@ -192,7 +192,7 @@ class Function(object):
         else:
             assert self.dimensionality == shape_bounds[0] == shape_global_minimizers[1]
 
-    def get_grids(self, num_grids):
+    def sample_grids(self, num_grids):
         assert isinstance(num_grids, int)
 
         list_grids = []
@@ -205,3 +205,21 @@ class Function(object):
         grids = np.vstack(tuple(list_grids))
         grids = grids.T
         return grids
+
+    def sample_uniform(self, num_points, seed=None):
+        assert isinstance(num_points, int)
+        assert isinstance(seed, (type(None), int))
+
+        random_state_ = np.random.RandomState(seed)
+
+        if self.dimensionality is np.inf:
+            dim_problem = self.dim_problem
+        else:
+            dim_problem = self.dimensionality
+
+        bounds = self.get_bounds()
+
+        points = random_state_.uniform(size=(num_points, dim_problem))
+        points = (bounds[:, 0] + (bounds[:, 1] - bounds[:, 0])) * points
+
+        return points

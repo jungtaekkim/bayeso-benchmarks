@@ -18,7 +18,7 @@ def test_global_minimum_branin():
     class_fun = Branin
 
     obj_fun = class_fun()
-    grids = obj_fun.get_grids(100)
+    grids = obj_fun.sample_grids(100)
     vals_grids = obj_fun.output(grids)
     ind_minimum = np.argmin(vals_grids)
     global_minimum_brute_force = np.min(vals_grids)
@@ -32,7 +32,7 @@ def test_global_minimum_eggholder():
     class_fun = Eggholder
 
     obj_fun = class_fun()
-    grids = obj_fun.get_grids(100)
+    grids = obj_fun.sample_grids(100)
     vals_grids = obj_fun.output(grids)
     ind_minimum = np.argmin(vals_grids)
     global_minimum_brute_force = np.min(vals_grids)
@@ -46,7 +46,7 @@ def test_global_minimum_michalewicz():
     class_fun = Michalewicz
 
     obj_fun = class_fun()
-    grids = obj_fun.get_grids(100)
+    grids = obj_fun.sample_grids(100)
     vals_grids = obj_fun.output(grids)
     ind_minimum = np.argmin(vals_grids)
     global_minimum_brute_force = np.min(vals_grids)
@@ -60,7 +60,7 @@ def test_global_minimum_dejong5():
     class_fun = DeJong5
 
     obj_fun = class_fun()
-    grids = obj_fun.get_grids(100)
+    grids = obj_fun.sample_grids(100)
     vals_grids = obj_fun.output(grids)
     ind_minimum = np.argmin(vals_grids)
     global_minimum_brute_force = np.min(vals_grids)
