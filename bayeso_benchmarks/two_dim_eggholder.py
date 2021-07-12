@@ -33,7 +33,7 @@ class Eggholder(Function):
         global_minimizers = np.array([
             [512.0, 404.2319],
         ])
-        global_minimum = -959.64066
+        global_minimum = -959.6406627
         function = lambda bx: fun_target(bx, dim_bx)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)

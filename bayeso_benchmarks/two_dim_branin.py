@@ -50,7 +50,7 @@ class Branin(Function):
             [np.pi, 2.275],
             [9.42478, 2.475],
         ])
-        global_minimum = 0.397887
+        global_minimum = 0.3978874
         function = lambda bx: fun_target(bx, dim_bx, a, b, c, r, s, t)
 
         Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
