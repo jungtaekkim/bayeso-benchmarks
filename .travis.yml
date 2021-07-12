@@ -10,6 +10,7 @@ python:
 install:
   - pip install .
 script:
+  - pip install scipy
   - pytest
 notifications:
   slack: bayeso:FWBoHH9TMqjKUJWkZxCaTNVE
