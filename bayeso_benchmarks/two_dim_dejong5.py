@@ -27,7 +27,9 @@ def fun_target(bx, dim_bx):
 
 
 class DeJong5(Function):
-    def __init__(self):
+    def __init__(self, seed=None):
+        assert isinstance(seed, (type(None), int))
+
         dim_bx = 2
         bounds = np.array([
             [-65.536, 65.536],
@@ -46,4 +48,4 @@ class DeJong5(Function):
         global_minimum = 0.9980038
         function = lambda bx: fun_target(bx, dim_bx)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

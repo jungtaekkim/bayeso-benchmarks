@@ -35,9 +35,11 @@ class Step(Function):
     def __init__(self,
         steps=[-10., -5., 0., 5., 10.],
         step_values=[-2., 0., 1., -1.],
+        seed=None
     ):
         assert isinstance(steps, list)
         assert isinstance(step_values, list)
+        assert isinstance(seed, (type(None), int))
         assert len(steps) == len(step_values) + 1
         assert isinstance(steps[0], float)
         assert isinstance(step_values[0], float)
@@ -53,4 +55,4 @@ class Step(Function):
         global_minimum = np.min(step_values)
         function = lambda bx: fun_target(bx, dim_bx, steps, step_values)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

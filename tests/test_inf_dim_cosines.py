@@ -23,6 +23,10 @@ def test_init():
         class_fun('abc')
     with pytest.raises(AssertionError) as error:
         class_fun(2.1)
+    with pytest.raises(AssertionError) as error:
+        class_fun(2, seed='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(2, seed=2.1)
 
 def test_validate_properties():
     obj_fun = class_fun(1)

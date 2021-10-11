@@ -16,6 +16,11 @@ TEST_EPSILON = 1e-5
 def test_init():
     obj_fun = class_fun()
 
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed=2.1)
+
 def test_validate_properties():
     obj_fun = class_fun()
     obj_fun.validate_properties()

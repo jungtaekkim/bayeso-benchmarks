@@ -43,9 +43,11 @@ class Hartmann3D(Function):
             [0.0, 1.0],
             [0.0, 1.0],
             [0.0, 1.0],
-        ])
+        ]),
+        seed=None
     ):
         assert isinstance(bounds, np.ndarray)
+        assert isinstance(seed, (type(None), int))
         assert len(bounds.shape) == 2
         assert bounds.shape[1] == 2
 
@@ -58,4 +60,4 @@ class Hartmann3D(Function):
         global_minimum = -3.86278
         function = lambda bx: fun_target(bx, dim_bx)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
