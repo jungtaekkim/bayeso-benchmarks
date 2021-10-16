@@ -22,10 +22,12 @@ class Constant(Function):
         bounds = np.array([
             [-10.0, 10.0],
         ]),
-        constant=0.0
+        constant=0.0,
+        seed=None
     ):
         assert isinstance(constant, float)
         assert isinstance(bounds, np.ndarray)
+        assert isinstance(seed, (type(None), int))
         assert len(bounds.shape) == 2
         assert bounds.shape[0] == 1
         assert bounds.shape[1] == 2
@@ -41,4 +43,4 @@ class Constant(Function):
         global_minimum = constant
         function = lambda bx: fun_target(bx, dim_bx, constant)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

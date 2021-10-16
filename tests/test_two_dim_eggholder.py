@@ -16,6 +16,15 @@ TEST_EPSILON = 1e-5
 def test_init():
     obj_fun = class_fun()
 
+    with pytest.raises(AssertionError) as error:
+        class_fun(bounds='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(bounds=2.1)
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed=2.1)
+
 def test_validate_properties():
     obj_fun = class_fun()
     obj_fun.validate_properties()
@@ -24,7 +33,7 @@ def test_output():
     obj_fun = class_fun()
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [737.27824186],
         [192.69874664],

@@ -23,6 +23,10 @@ def test_init():
         class_fun('abc')
     with pytest.raises(AssertionError) as error:
         class_fun(2.1)
+    with pytest.raises(AssertionError) as error:
+        class_fun(2, seed='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(2, seed=2.1)
 
 def test_validate_properties():
     obj_fun = class_fun(1)
@@ -32,7 +36,7 @@ def test_output():
     obj_fun = class_fun(3)
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [-2.7],
         [-2.8],

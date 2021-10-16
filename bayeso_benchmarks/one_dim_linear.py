@@ -22,10 +22,12 @@ class Linear(Function):
         bounds=np.array([
             [-10, 10],
         ]),
-        slope=1.0
+        slope=1.0,
+        seed=None
     ):
         assert isinstance(slope, float)
         assert isinstance(bounds, np.ndarray)
+        assert isinstance(seed, (type(None), int))
         assert len(bounds.shape) == 2
         assert bounds.shape[0] == 1
         assert bounds.shape[1] == 2
@@ -45,4 +47,4 @@ class Linear(Function):
             global_minimum = slope * bounds[0, 1]
         function = lambda bx: fun_target(bx, dim_bx, slope)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

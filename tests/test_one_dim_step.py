@@ -29,6 +29,10 @@ def test_init():
         class_fun(steps=[1., 2., 3., 4.], step_values=[1, 2, 3])
     with pytest.raises(AssertionError) as error:
         class_fun(steps=[1., 2., 5., 3.], step_values=[1., 2., 3.])
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed=2.1)
 
 def test_validate_properties():
     obj_fun = class_fun()
@@ -38,7 +42,7 @@ def test_output():
     obj_fun = class_fun()
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(5)
+    grids = obj_fun.sample_grids(5)
     truths_grids = np.array([
         [-2.0],
         [0.0],

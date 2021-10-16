@@ -30,6 +30,10 @@ def test_init():
         class_fun(slope=2)
     with pytest.raises(AssertionError) as error:
         class_fun(slope='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed='abc')
+    with pytest.raises(AssertionError) as error:
+        class_fun(seed=2.1)
 
 def test_validate_properties():
     obj_fun = class_fun()
@@ -51,7 +55,7 @@ def test_output():
     obj_fun = class_fun()
     bounds = obj_fun.get_bounds()
 
-    grids = obj_fun.get_grids(3)
+    grids = obj_fun.sample_grids(3)
     truths_grids = np.array([
         [-10.0],
         [0.0],

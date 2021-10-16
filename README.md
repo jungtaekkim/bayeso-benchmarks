@@ -1,5 +1,5 @@
 # BayesO Benchmarks
-[![Build Status](https://travis-ci.org/jungtaekkim/bayeso-benchmarks.svg?branch=main)](https://travis-ci.org/jungtaekkim/bayeso-benchmarks)
+[![Build Status](https://travis-ci.com/jungtaekkim/bayeso-benchmarks.svg?branch=main)](https://travis-ci.com/jungtaekkim/bayeso-benchmarks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Benchmarks for Bayesian optimization.
@@ -49,6 +49,20 @@ Mandatory pacakges are inlcuded in `requirements.txt`.
 The following `requirements` files include the package list, the purpose of which is described as follows.
 
 * `requirements-dev.txt`: It is for developing the `bayeso-benchmarks` package.
+
+## Simple Example
+A simple example on Branin function is shown below.
+```python
+from bayeso_benchmarks import Branin
+
+obj_fun = Branin()
+bounds = obj_fun.get_bounds()
+
+X = obj_fun.sample_uniform(100)
+
+Y = obj_fun.output(X)
+Y_noise = obj_fun.output_gaussian_noise(X)
+```
 
 ## Author
 * [Jungtaek Kim](http://jungtaek.github.io) (POSTECH)

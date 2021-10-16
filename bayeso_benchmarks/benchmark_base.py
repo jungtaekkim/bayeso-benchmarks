@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# last updated: May 1, 2021
 #
 
 import numpy as np
@@ -126,8 +126,46 @@ class Function(object):
             num_X = X.shape[0]
         else:
             num_X = 1
-            
+
         noise = self.random_state.randn(num_X)
+        mask = self.random_state.uniform(low=0.0, high=1.0, size=num_X) < sparsity
+        noise *= mask.astype(np.float)
+        by += scale_noise * noise
+
+        Y = np.expand_dims(by, axis=1)
+
+        assert len(Y.shape) == 2
+        assert Y.shape[1] == 1
+        return Y
+
+    def output_student_t_noise(self, X, scale_noise=0.01, dof=4.0):
+        assert isinstance(scale_noise, float)
+        assert isinstance(dof, float)
+
+        by = self._output(X)
+        by += scale_noise * self.random_state.standard_t(dof, size=by.shape[0])
+
+        Y = np.expand_dims(by, axis=1)
+
+        assert len(Y.shape) == 2
+        assert Y.shape[1] == 1
+        return Y
+
+    def output_sparse_student_t_noise(self, X, scale_noise=0.1, dof=4.0, sparsity=0.01):
+        assert isinstance(scale_noise, float)
+        assert isinstance(dof, float)
+        assert isinstance(sparsity, float)
+        assert sparsity >= 0.0 and sparsity <= 1.0
+        assert sparsity < 0.5
+
+        by = self._output(X)
+
+        if len(X.shape) == 2:
+            num_X = X.shape[0]
+        else:
+            num_X = 1
+
+        noise = self.random_state.standard_t(dof, size=num_X)
         mask = self.random_state.uniform(low=0.0, high=1.0, size=num_X) < sparsity
         noise *= mask.astype(np.float)
         by += scale_noise * noise
@@ -154,7 +192,7 @@ class Function(object):
         else:
             assert self.dimensionality == shape_bounds[0] == shape_global_minimizers[1]
 
-    def get_grids(self, num_grids):
+    def sample_grids(self, num_grids):
         assert isinstance(num_grids, int)
 
         list_grids = []
@@ -167,3 +205,21 @@ class Function(object):
         grids = np.vstack(tuple(list_grids))
         grids = grids.T
         return grids
+
+    def sample_uniform(self, num_points, seed=None):
+        assert isinstance(num_points, int)
+        assert isinstance(seed, (type(None), int))
+
+        random_state_ = np.random.RandomState(seed)
+
+        if self.dimensionality is np.inf:
+            dim_problem = self.dim_problem
+        else:
+            dim_problem = self.dimensionality
+
+        bounds = self.get_bounds()
+
+        points = random_state_.uniform(size=(num_points, dim_problem))
+        points = (bounds[:, 0] + (bounds[:, 1] - bounds[:, 0])) * points
+
+        return points

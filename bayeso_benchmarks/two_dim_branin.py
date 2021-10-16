@@ -29,7 +29,8 @@ class Branin(Function):
         c=5 / np.pi,
         r=6.0,
         s=10.0,
-        t=1 / (8 * np.pi)
+        t=1 / (8 * np.pi),
+        seed=None
     ):
         assert isinstance(a, float)
         assert isinstance(b, float)
@@ -37,6 +38,7 @@ class Branin(Function):
         assert isinstance(r, float)
         assert isinstance(s, float)
         assert isinstance(t, float)
+        assert isinstance(seed, (type(None), int))
 
         dim_bx = 2
         bounds = np.array([
@@ -48,7 +50,7 @@ class Branin(Function):
             [np.pi, 2.275],
             [9.42478, 2.475],
         ])
-        global_minimum = 0.397887
+        global_minimum = 0.3978874
         function = lambda bx: fun_target(bx, dim_bx, a, b, c, r, s, t)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

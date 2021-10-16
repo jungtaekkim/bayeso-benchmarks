@@ -25,7 +25,9 @@ def fun_target(bx, dim_bx):
 
 
 class GoldsteinPrice(Function):
-    def __init__(self):
+    def __init__(self, seed=None):
+        assert isinstance(seed, (type(None), int))
+
         dim_bx = 2
         bounds = np.array([
             [-2.0, 2.0],
@@ -37,4 +39,4 @@ class GoldsteinPrice(Function):
         global_minimum = 3.0
         function = lambda bx: fun_target(bx, dim_bx)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

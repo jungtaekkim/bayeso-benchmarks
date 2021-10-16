@@ -24,8 +24,9 @@ def fun_target(bx, dim_bx,
 
 
 class Ackley(Function):
-    def __init__(self, dim_problem):
+    def __init__(self, dim_problem, seed=None):
         assert isinstance(dim_problem, int)
+        assert isinstance(seed, (type(None), int))
 
         dim_bx = np.inf
         bounds = np.array([
@@ -39,4 +40,4 @@ class Ackley(Function):
 
         function = lambda bx: fun_target(bx, dim_problem)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, dim_problem=dim_problem)
+        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, dim_problem=dim_problem, seed=seed)
