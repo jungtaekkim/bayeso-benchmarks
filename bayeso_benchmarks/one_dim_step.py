@@ -55,4 +55,4 @@ class Step(Function):
         global_minimum = np.min(step_values)
         function = lambda bx: fun_target(bx, dim_bx, steps, step_values)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

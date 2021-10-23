@@ -36,4 +36,4 @@ class Michalewicz(Function):
         global_minimum = -1.8013034
         function = lambda bx: fun_target(bx, dim_bx)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

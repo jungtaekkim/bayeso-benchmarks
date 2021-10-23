@@ -43,4 +43,4 @@ class Constant(Function):
         global_minimum = constant
         function = lambda bx: fun_target(bx, dim_bx, constant)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
