@@ -46,4 +46,7 @@ class Kim3(Function):
         global_minimum = -4.943967919350982
         function = lambda bx: fun_target(bx, dim_bx)
 
-        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        try:
+            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        except:
+            super(Kim3, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
