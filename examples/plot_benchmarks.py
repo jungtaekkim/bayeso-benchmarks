@@ -160,6 +160,18 @@ if __name__ == '__main__':
     obj_fun = target_class()
     plot_2d(obj_fun, 'holdertable_2d')
 
+    from bayeso_benchmarks.two_dim_kim1 import Kim1 as target_class
+    obj_fun = target_class()
+    plot_2d(obj_fun, 'kim1_2d')
+
+    from bayeso_benchmarks.two_dim_kim2 import Kim2 as target_class
+    obj_fun = target_class()
+    plot_2d(obj_fun, 'kim2_2d')
+
+    from bayeso_benchmarks.two_dim_kim3 import Kim3 as target_class
+    obj_fun = target_class()
+    plot_2d(obj_fun, 'kim3_2d')
+
     from bayeso_benchmarks.two_dim_michalewicz import Michalewicz as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'michalewicz_2d')
