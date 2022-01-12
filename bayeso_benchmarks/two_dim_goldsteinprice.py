@@ -39,4 +39,7 @@ class GoldsteinPrice(Function):
         global_minimum = 3.0
         function = lambda bx: fun_target(bx, dim_bx)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        try:
+            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        except:
+            super(GoldsteinPrice, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

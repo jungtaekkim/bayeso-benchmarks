@@ -66,6 +66,21 @@ def test_import_two_dim_holdertable():
     from bayeso_benchmarks.two_dim_holdertable import HolderTable
     from bayeso_benchmarks import HolderTable
 
+def test_import_two_dim_kim1():
+    import bayeso_benchmarks.two_dim_kim1
+    from bayeso_benchmarks.two_dim_kim1 import Kim1
+    from bayeso_benchmarks import Kim1
+
+def test_import_two_dim_kim2():
+    import bayeso_benchmarks.two_dim_kim2
+    from bayeso_benchmarks.two_dim_kim2 import Kim2
+    from bayeso_benchmarks import Kim2
+
+def test_import_two_dim_kim3():
+    import bayeso_benchmarks.two_dim_kim3
+    from bayeso_benchmarks.two_dim_kim3 import Kim3
+    from bayeso_benchmarks import Kim3
+
 def test_import_two_dim_michalewicz():
     import bayeso_benchmarks.two_dim_michalewicz
     from bayeso_benchmarks.two_dim_michalewicz import Michalewicz

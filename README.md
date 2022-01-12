@@ -1,9 +1,9 @@
 # BayesO Benchmarks
-[![Build Status](https://app.travis-ci.com/jungtaekkim/bayeso-benchmarks.svg?branch=main)](https://app.travis-ci.com/jungtaekkim/bayeso-benchmarks)
+[![Build Status](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml/badge.svg)](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Benchmarks for Bayesian optimization.
-The details of benchmark functions can be found in [these notes](http://jungtaek.github.io/notes/benchmarks_bo.pdf).
+The details of benchmark functions can be found in [these notes](https://jungtaek.github.io/notes/benchmarks_bo.pdf).
 
 ## Installation
 We recommend installing it with `virtualenv`.
@@ -65,10 +65,7 @@ Y_noise = obj_fun.output_gaussian_noise(X)
 ```
 
 ## Author
-* [Jungtaek Kim](http://jungtaek.github.io) (POSTECH)
-
-## Contact
-* Jungtaek Kim: [jtkim@postech.ac.kr](mailto:jtkim@postech.ac.kr)
+* [Jungtaek Kim](https://jungtaek.github.io) (POSTECH)
 
 ## License
 [MIT License](LICENSE)

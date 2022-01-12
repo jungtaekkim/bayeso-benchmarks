@@ -60,4 +60,7 @@ class Hartmann3D(Function):
         global_minimum = -3.86278
         function = lambda bx: fun_target(bx, dim_bx)
 
-        Function.__init__(self, dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        try:
+            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        except:
+            super(Hartmann3D, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

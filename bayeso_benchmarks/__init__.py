@@ -1,9 +1,10 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: June 24, 2021
+# last updated: October 23, 2021
 #
 
-__version__ = '0.1.5'
+
+__version__ = '0.1.6'
 
 
 from bayeso_benchmarks.inf_dim_ackley import Ackley
@@ -24,6 +25,9 @@ from bayeso_benchmarks.two_dim_dropwave import DropWave
 from bayeso_benchmarks.two_dim_eggholder import Eggholder
 from bayeso_benchmarks.two_dim_goldsteinprice import GoldsteinPrice
 from bayeso_benchmarks.two_dim_holdertable import HolderTable
+from bayeso_benchmarks.two_dim_kim1 import Kim1
+from bayeso_benchmarks.two_dim_kim2 import Kim2
+from bayeso_benchmarks.two_dim_kim3 import Kim3
 from bayeso_benchmarks.two_dim_michalewicz import Michalewicz
 from bayeso_benchmarks.two_dim_sixhumpcamel import SixHumpCamel
 from bayeso_benchmarks.two_dim_threehumpcamel import ThreeHumpCamel

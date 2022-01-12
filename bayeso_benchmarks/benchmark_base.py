@@ -74,6 +74,11 @@ class Function(object):
     def _output(self, X):
         assert isinstance(X, np.ndarray)
 
+        bounds = self.get_bounds()
+
+        assert np.all(X >= bounds[:, 0])
+        assert np.all(X <= bounds[:, 1])
+
         if len(X.shape) == 2:
             list_results = [self.function(bx) for bx in X]
         else:
@@ -220,6 +225,6 @@ class Function(object):
         bounds = self.get_bounds()
 
         points = random_state_.uniform(size=(num_points, dim_problem))
-        points = (bounds[:, 0] + (bounds[:, 1] - bounds[:, 0])) * points
+        points = bounds[:, 0] + (bounds[:, 1] - bounds[:, 0]) * points
 
         return points

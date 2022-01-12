@@ -9,10 +9,11 @@ import pytest
 
 from bayeso_benchmarks import Ackley
 from bayeso_benchmarks import Branin
-from bayeso_benchmarks import DeJong5
-from bayeso_benchmarks import Eggholder
 from bayeso_benchmarks import GramacyAndLee2012
 from bayeso_benchmarks import HolderTable
+from bayeso_benchmarks import Kim1
+from bayeso_benchmarks import Kim2
+from bayeso_benchmarks import Kim3
 from bayeso_benchmarks import Michalewicz
 
 
@@ -62,18 +63,6 @@ def test_global_minimum_branin():
 
     _test_global_minimum(obj_fun)
 
-def test_global_minimum_dejong5():
-    class_fun = DeJong5
-    obj_fun = class_fun()
-
-    _test_global_minimum(obj_fun)
-
-def test_global_minimum_eggholder():
-    class_fun = Eggholder
-    obj_fun = class_fun()
-
-    _test_global_minimum(obj_fun)
-
 def test_global_minimum_gramacyandlee2012():
     class_fun = GramacyAndLee2012
     obj_fun = class_fun()
@@ -82,6 +71,24 @@ def test_global_minimum_gramacyandlee2012():
 
 def test_global_minimum_holdertable():
     class_fun = HolderTable
+    obj_fun = class_fun()
+
+    _test_global_minimum(obj_fun)
+
+def test_global_minimum_kim1():
+    class_fun = Kim1
+    obj_fun = class_fun()
+
+    _test_global_minimum(obj_fun)
+
+def test_global_minimum_kim2():
+    class_fun = Kim2
+    obj_fun = class_fun()
+
+    _test_global_minimum(obj_fun)
+
+def test_global_minimum_kim3():
+    class_fun = Kim3
     obj_fun = class_fun()
 
     _test_global_minimum(obj_fun)
