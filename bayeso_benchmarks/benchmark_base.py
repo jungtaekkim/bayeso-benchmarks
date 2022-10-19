@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: May 1, 2021
+# last updated: October 19, 2022
 #
 
 import numpy as np
@@ -134,7 +134,7 @@ class Function(object):
 
         noise = self.random_state.randn(num_X)
         mask = self.random_state.uniform(low=0.0, high=1.0, size=num_X) < sparsity
-        noise *= mask.astype(np.float)
+        noise *= mask.astype(float)
         by += scale_noise * noise
 
         Y = np.expand_dims(by, axis=1)
@@ -172,7 +172,7 @@ class Function(object):
 
         noise = self.random_state.standard_t(dof, size=num_X)
         mask = self.random_state.uniform(low=0.0, high=1.0, size=num_X) < sparsity
-        noise *= mask.astype(np.float)
+        noise *= mask.astype(float)
         by += scale_noise * noise
 
         Y = np.expand_dims(by, axis=1)

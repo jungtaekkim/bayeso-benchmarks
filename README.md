@@ -65,7 +65,7 @@ Y_noise = obj_fun.output_gaussian_noise(X)
 ```
 
 ## Author
-* [Jungtaek Kim](https://jungtaek.github.io) (POSTECH)
+* [Jungtaek Kim](https://jungtaek.github.io)
 
 ## License
 [MIT License](LICENSE)

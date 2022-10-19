@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: July 12, 2021
+# last updated: October 19, 2022
 #
 
 import numpy as np
@@ -36,7 +36,7 @@ def _test_global_minimum(obj_fun):
 
     ind_minimum = np.argmin(np.squeeze(list_by))
     bx_best = list_bx[ind_minimum]
-    y_best = list_by[ind_minimum][0]
+    y_best = list_by[ind_minimum]
 
     print(bx_best)
     print(obj_fun.global_minimum)
