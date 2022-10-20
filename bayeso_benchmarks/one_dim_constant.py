@@ -19,7 +19,7 @@ def fun_target(bx, dim_bx, constant):
 
 class Constant(Function):
     def __init__(self,
-        bounds = np.array([
+        bounds=np.array([
             [-10.0, 10.0],
         ]),
         constant=0.0,
