@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# last updated: December 4, 2022
 #
 
 import numpy as np
@@ -9,6 +9,7 @@ import pytest
 from bayeso_benchmarks.two_dim_branin import *
 
 class_fun = Branin
+str_name = 'beale'
 
 TEST_EPSILON = 1e-5
 SCALE_NOISE = 2.0
@@ -174,3 +175,7 @@ def test_output_sparse_student_t_noise():
     print(outputs)
     print(np.abs(outputs - truths_grids) < TEST_EPSILON)
     assert np.all(np.abs(outputs - truths_grids) < TEST_EPSILON)
+
+def test_name():
+    obj_fun = class_fun()
+    assert obj_fun.name == str_name

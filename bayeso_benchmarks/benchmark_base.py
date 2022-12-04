@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: October 19, 2022
+# last updated: December 4, 2022
 #
 
 import numpy as np
@@ -30,6 +30,7 @@ class Function(object):
         self.random_state = np.random.RandomState(seed)
 
         self.validate_properties()
+        self.set_name()
 
     @property
     def dimensionality(self):
@@ -46,6 +47,14 @@ class Function(object):
     @property
     def global_minimum(self):
         return self._global_minimum
+
+    def set_name(self):
+        name = self.__class__.__name__.lower()
+
+        if self.dimensionality is np.inf:
+            self.name = f'{name}_{self.dim_problem}'
+        else:
+            self.name = name
 
     def get_bounds(self):
         if self.dimensionality is np.inf:
