@@ -9,7 +9,7 @@ import pytest
 from bayeso_benchmarks.two_dim_branin import *
 
 class_fun = Branin
-str_name = 'beale'
+str_name = 'branin'
 
 TEST_EPSILON = 1e-5
 SCALE_NOISE = 2.0

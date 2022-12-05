@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# last updated: December 4, 2022
 #
 
 import numpy as np
@@ -9,6 +9,7 @@ import pytest
 from bayeso_benchmarks.inf_dim_sphere import *
 
 class_fun = Sphere
+str_name = 'sphere'
 
 TEST_EPSILON = 1e-5
 
@@ -70,3 +71,13 @@ def test_output():
     print(obj_fun.output(grids))
     print(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
     assert np.all(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
+
+def test_name():
+    obj_fun = class_fun(2)
+    assert obj_fun.name == str_name + '_2'
+
+    obj_fun = class_fun(4)
+    assert obj_fun.name == str_name + '_4'
+
+    obj_fun = class_fun(16)
+    assert obj_fun.name == str_name + '_16'
