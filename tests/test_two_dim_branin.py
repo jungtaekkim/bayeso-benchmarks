@@ -179,3 +179,6 @@ def test_output_sparse_student_t_noise():
 def test_name():
     obj_fun = class_fun()
     assert obj_fun.name == str_name
+
+    assert obj_fun.__class__.__name__.lower() == str_name
+    assert obj_fun.__class__.__qualname__.lower() == str_name

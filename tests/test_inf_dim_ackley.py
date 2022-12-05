@@ -81,3 +81,6 @@ def test_name():
 
     obj_fun = class_fun(16)
     assert obj_fun.name == str_name + '_16'
+
+    assert obj_fun.__class__.__name__.lower() == str_name
+    assert obj_fun.__class__.__qualname__.lower() == str_name

@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 4, 2022
+# last updated: December 5, 2022
 #
 
 
@@ -10,8 +10,48 @@ def test_import_benchmarks():
 def test_all_benchmarks():
     import bayeso_benchmarks
 
+    list_str_names = [
+        'ackley',
+        'cosines',
+        'rosenbrock',
+        'sphere',
+        'constant',
+        'gramacyandlee2012',
+        'linear',
+        'step',
+        'hartmann3d',
+        'hartmann6d',
+        'beale',
+        'bohachevsky',
+        'branin',
+        'dejong5',
+        'dropwave',
+        'eggholder',
+        'goldsteinprice',
+        'holdertable',
+        'kim1',
+        'kim2',
+        'kim3',
+        'michalewicz',
+        'sixhumpcamel',
+        'threehumpcamel',
+    ]
+
+    names = []
+    for class_benchmark in bayeso_benchmarks.all_benchmarks:
+        print(class_benchmark.__name__.lower())
+        names.append(class_benchmark.__name__.lower())
+
+    for str_name in list_str_names:
+        assert str_name in names
+
+    qualnames = []
     for class_benchmark in bayeso_benchmarks.all_benchmarks:
         print(class_benchmark.__qualname__.lower())
+        qualnames.append(class_benchmark.__qualname__.lower())
+
+    for str_name in list_str_names:
+        assert str_name in qualnames
 
 def test_num_benchmarks():
     import bayeso_benchmarks

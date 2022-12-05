@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: October 20, 2022
+# last updated: December 5, 2022
 #
 
 import numpy as np
@@ -12,7 +12,7 @@ def get_benchmark(str_fun, seed=None, **kwargs):
     count = 0
 
     for class_benchmark in bb.all_benchmarks:
-        if str_fun == class_benchmark.__qualname__.lower():
+        if str_fun == class_benchmark.__name__.lower():
             target_class = class_benchmark
             count += 1
 
