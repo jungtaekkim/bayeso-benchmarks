@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: October 19, 2022
+# last updated: December 4, 2022
 #
 
 
@@ -34,3 +34,32 @@ from bayeso_benchmarks.two_dim_threehumpcamel import ThreeHumpCamel
 
 from bayeso_benchmarks.three_dim_hartmann3d import Hartmann3D
 from bayeso_benchmarks.six_dim_hartmann6d import Hartmann6D
+
+
+all_benchmarks = [
+    Ackley,
+    Cosines,
+    Rosenbrock,
+    Sphere,
+    Constant,
+    GramacyAndLee2012,
+    Linear,
+    Step,
+    Beale,
+    Bohachevsky,
+    Branin,
+    DeJong5,
+    DropWave,
+    Eggholder,
+    GoldsteinPrice,
+    HolderTable,
+    Kim1,
+    Kim2,
+    Kim3,
+    Michalewicz,
+    SixHumpCamel,
+    ThreeHumpCamel,
+    Hartmann3D,
+    Hartmann6D,
+]
+num_benchmarks = len(all_benchmarks)

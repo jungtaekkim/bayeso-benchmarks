@@ -1,11 +1,22 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# last updated: December 4, 2022
 #
 
 
 def test_import_benchmarks():
     import bayeso_benchmarks
+
+def test_all_benchmarks():
+    import bayeso_benchmarks
+
+    for class_benchmark in bayeso_benchmarks.all_benchmarks:
+        print(class_benchmark.__qualname__.lower())
+
+def test_num_benchmarks():
+    import bayeso_benchmarks
+
+    assert bayeso_benchmarks.num_benchmarks == 24
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
