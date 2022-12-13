@@ -1,9 +1,15 @@
-# BayesO Benchmarks
+<p align="center">
+<img src="https://github.com/jungtaekkim/bayeso/blob/main/docs/_static/assets/logo_bayeso_capitalized.svg" width="400" />
+</p>
+
+# BayesO Benchmarks: Benchmark Functions for Bayesian Optimization
 [![Build Status](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml/badge.svg)](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Benchmarks for Bayesian optimization.
+This repository provides the implementation of benchmark functions for Bayesian optimization.
 The details of benchmark functions can be found in [these notes](https://jungtaek.github.io/notes/benchmarks_bo.pdf).
+
+* [https://bayeso.org](https://bayeso.org)
 
 ## Installation
 We recommend installing it with `virtualenv`.
