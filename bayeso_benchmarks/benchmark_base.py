@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 4, 2022
+# last updated: December 13, 2022
 #
 
 import numpy as np
@@ -8,7 +8,7 @@ import numpy as np
 EPSILON = 1e-4
 
 
-class Function(object):
+class Function:
     def __init__(self, dimensionality, bounds, global_minimizers, global_minimum, function, dim_problem=None, seed=None):
         assert isinstance(dimensionality, int) or dimensionality is np.inf
         assert isinstance(bounds, np.ndarray)
@@ -237,3 +237,6 @@ class Function(object):
         points = bounds[:, 0] + (bounds[:, 1] - bounds[:, 0]) * points
 
         return points
+
+    def __call__(self, X):
+        return self.output(X)

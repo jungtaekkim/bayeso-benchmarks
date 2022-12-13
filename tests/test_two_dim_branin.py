@@ -62,6 +62,28 @@ def test_output():
     print(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
     assert np.all(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
 
+def test_call():
+    obj_fun = class_fun()
+    bounds = obj_fun.get_bounds()
+
+    grids = obj_fun.sample_grids(3)
+    truths_grids = np.array([
+        [308.12909601],
+        [10.30790849],
+        [10.96088904],
+        [106.56869776],
+        [24.12996441],
+        [22.16653996],
+        [17.50829952],
+        [150.45202034],
+        [145.87219088],
+    ])
+
+    print(grids)
+    print(obj_fun(grids))
+    print(np.abs(obj_fun(grids) - truths_grids) < TEST_EPSILON)
+    assert np.all(np.abs(obj_fun(grids) - truths_grids) < TEST_EPSILON)
+
 def test_output_constant_noise():
     obj_fun = class_fun()
     bounds = obj_fun.get_bounds()
