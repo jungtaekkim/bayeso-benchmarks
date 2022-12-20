@@ -21,7 +21,13 @@ def get_benchmark(str_fun, seed=None, **kwargs):
     elif count > 1:
         raise ValueError('duplicate class name.')
 
-    if str_fun in ['ackley', 'cosines', 'rosenbrock', 'sphere']:
+    if str_fun in [
+        'ackley',
+        'cosines',
+        'rastrigin',
+        'rosenbrock',
+        'sphere'
+    ]:
         assert 'dim' in kwargs
         dim = kwargs['dim']
 

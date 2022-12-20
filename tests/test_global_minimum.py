@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: October 19, 2022
+# last updated: December 20, 2022
 #
 
 import numpy as np
@@ -14,6 +14,7 @@ from bayeso_benchmarks import HolderTable
 from bayeso_benchmarks import Kim1
 from bayeso_benchmarks import Kim2
 from bayeso_benchmarks import Kim3
+from bayeso_benchmarks import Rastrigin
 from bayeso_benchmarks import Michalewicz
 
 
@@ -96,5 +97,11 @@ def test_global_minimum_kim3():
 def test_global_minimum_michalewicz():
     class_fun = Michalewicz
     obj_fun = class_fun()
+
+    _test_global_minimum(obj_fun)
+
+def test_global_minimum_rastrigin():
+    class_fun = Rastrigin
+    obj_fun = class_fun(2)
 
     _test_global_minimum(obj_fun)

@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 5, 2022
+# last updated: December 20, 2022
 #
 
 
@@ -13,6 +13,7 @@ def test_all_benchmarks():
     list_str_names = [
         'ackley',
         'cosines',
+        'rastrigin',
         'rosenbrock',
         'sphere',
         'constant',
@@ -56,7 +57,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 24
+    assert bayeso_benchmarks.num_benchmarks == 25
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -161,6 +162,11 @@ def test_import_inf_dim_ackley():
     import bayeso_benchmarks.inf_dim_ackley
     from bayeso_benchmarks.inf_dim_ackley import Ackley
     from bayeso_benchmarks import Ackley
+
+def test_import_inf_dim_rastrigin():
+    import bayeso_benchmarks.inf_dim_rastrigin
+    from bayeso_benchmarks.inf_dim_rastrigin import Rastrigin
+    from bayeso_benchmarks import Rastrigin
 
 def test_import_inf_dim_rosenbrock():
     import bayeso_benchmarks.inf_dim_rosenbrock
