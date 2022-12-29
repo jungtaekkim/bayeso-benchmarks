@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 5, 2022
+# last updated: December 29, 2022
 #
 
 import numpy as np
@@ -24,6 +24,7 @@ def get_benchmark(str_fun, seed=None, **kwargs):
     if str_fun in [
         'ackley',
         'cosines',
+        'levy',
         'rastrigin',
         'rosenbrock',
         'sphere'

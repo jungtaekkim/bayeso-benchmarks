@@ -13,6 +13,7 @@ def test_all_benchmarks():
     list_str_names = [
         'ackley',
         'cosines',
+        'levy',
         'rastrigin',
         'rosenbrock',
         'sphere',
@@ -57,7 +58,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 25
+    assert bayeso_benchmarks.num_benchmarks == 26
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -162,6 +163,11 @@ def test_import_inf_dim_ackley():
     import bayeso_benchmarks.inf_dim_ackley
     from bayeso_benchmarks.inf_dim_ackley import Ackley
     from bayeso_benchmarks import Ackley
+
+def test_import_inf_dim_levy():
+    import bayeso_benchmarks.inf_dim_levy
+    from bayeso_benchmarks.inf_dim_levy import Levy
+    from bayeso_benchmarks import Levy
 
 def test_import_inf_dim_rastrigin():
     import bayeso_benchmarks.inf_dim_rastrigin

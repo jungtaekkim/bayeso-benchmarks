@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 20, 2022
+# last updated: December 29, 2022
 #
 
 
@@ -9,6 +9,7 @@ __version__ = '0.1.7'
 
 from bayeso_benchmarks.inf_dim_ackley import Ackley
 from bayeso_benchmarks.inf_dim_cosines import Cosines
+from bayeso_benchmarks.inf_dim_levy import Levy
 from bayeso_benchmarks.inf_dim_rastrigin import Rastrigin
 from bayeso_benchmarks.inf_dim_rosenbrock import Rosenbrock
 from bayeso_benchmarks.inf_dim_sphere import Sphere
@@ -40,6 +41,7 @@ from bayeso_benchmarks.six_dim_hartmann6d import Hartmann6D
 all_benchmarks = [
     Ackley,
     Cosines,
+    Levy,
     Rastrigin,
     Rosenbrock,
     Sphere,
