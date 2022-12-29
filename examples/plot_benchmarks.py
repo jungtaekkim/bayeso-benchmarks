@@ -8,6 +8,7 @@ def plot_1d(obj_fun,
     str_x_axis=r'$x$',
     str_y_axis=r'$f(x)$',
     str_figures='../figures',
+    show_figure=False,
 ):
     print(str_fun)
     bounds = obj_fun.get_bounds()
@@ -43,7 +44,10 @@ def plot_1d(obj_fun,
         transparent=True,
         bbox_inches='tight')
 
-    plt.show()
+    if show_figure:
+        plt.show()
+
+    plt.close('all')
 
 def plot_2d(obj_fun,
     str_fun,
@@ -51,6 +55,7 @@ def plot_2d(obj_fun,
     str_x2_axis=r'$x_2$',
     str_y_axis=r'$f(\mathbf{x})$',
     str_figures='../figures',
+    show_figure=False,
 ):
     print(str_fun)
     bounds = obj_fun.get_bounds()
@@ -106,7 +111,10 @@ def plot_2d(obj_fun,
         transparent=True,
         bbox_inches='tight')
 
-    plt.show()
+    if show_figure:
+        plt.show()
+
+    plt.close('all')
 
 
 if __name__ == '__main__':
@@ -122,6 +130,14 @@ if __name__ == '__main__':
     from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
     obj_fun = target_class(1)
     plot_1d(obj_fun, 'cosines_1d')
+
+    from bayeso_benchmarks.inf_dim_levy import Levy as target_class
+    obj_fun = target_class(1)
+    plot_1d(obj_fun, 'levy_1d')
+
+    from bayeso_benchmarks.inf_dim_rastrigin import Rastrigin as target_class
+    obj_fun = target_class(1)
+    plot_1d(obj_fun, 'rastrigin_1d')
 
     from bayeso_benchmarks.inf_dim_sphere import Sphere as target_class
     obj_fun = target_class(1)
@@ -191,6 +207,14 @@ if __name__ == '__main__':
     from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'cosines_2d')
+
+    from bayeso_benchmarks.inf_dim_levy import Levy as target_class
+    obj_fun = target_class(2)
+    plot_2d(obj_fun, 'levy_2d')
+
+    from bayeso_benchmarks.inf_dim_rastrigin import Rastrigin as target_class
+    obj_fun = target_class(2)
+    plot_2d(obj_fun, 'rastrigin_2d')
 
     from bayeso_benchmarks.inf_dim_rosenbrock import Rosenbrock as target_class
     obj_fun = target_class(2)
