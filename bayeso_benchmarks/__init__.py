@@ -34,6 +34,7 @@ from bayeso_benchmarks.two_dim_michalewicz import Michalewicz
 from bayeso_benchmarks.two_dim_sixhumpcamel import SixHumpCamel
 from bayeso_benchmarks.two_dim_threehumpcamel import ThreeHumpCamel
 
+from bayeso_benchmarks.four_dim_colville import Colville
 from bayeso_benchmarks.three_dim_hartmann3d import Hartmann3D
 from bayeso_benchmarks.six_dim_hartmann6d import Hartmann6D
 
@@ -63,6 +64,7 @@ all_benchmarks = [
     Michalewicz,
     SixHumpCamel,
     ThreeHumpCamel,
+    Colville,
     Hartmann3D,
     Hartmann6D,
 ]

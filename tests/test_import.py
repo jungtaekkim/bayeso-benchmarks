@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 20, 2022
+# last updated: December 30, 2022
 #
 
 
@@ -21,6 +21,7 @@ def test_all_benchmarks():
         'gramacyandlee2012',
         'linear',
         'step',
+        'colville',
         'hartmann3d',
         'hartmann6d',
         'beale',
@@ -58,7 +59,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 26
+    assert bayeso_benchmarks.num_benchmarks == 27
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -148,6 +149,11 @@ def test_import_two_dim_threehumpcamel():
     import bayeso_benchmarks.two_dim_threehumpcamel
     from bayeso_benchmarks.two_dim_threehumpcamel import ThreeHumpCamel
     from bayeso_benchmarks import ThreeHumpCamel
+
+def test_import_four_dim_colville():
+    import bayeso_benchmarks.four_dim_colville
+    from bayeso_benchmarks.four_dim_colville import Colville
+    from bayeso_benchmarks import Colville
 
 def test_import_three_dim_hartmann3d():
     import bayeso_benchmarks.three_dim_hartmann3d
