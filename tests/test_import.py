@@ -36,6 +36,7 @@ def test_all_benchmarks():
         'kim2',
         'kim3',
         'michalewicz',
+        'shubert',
         'sixhumpcamel',
         'threehumpcamel',
     ]
@@ -59,7 +60,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 27
+    assert bayeso_benchmarks.num_benchmarks == 28
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -139,6 +140,11 @@ def test_import_two_dim_michalewicz():
     import bayeso_benchmarks.two_dim_michalewicz
     from bayeso_benchmarks.two_dim_michalewicz import Michalewicz
     from bayeso_benchmarks import Michalewicz
+
+def test_import_two_dim_shubert():
+    import bayeso_benchmarks.two_dim_shubert
+    from bayeso_benchmarks.two_dim_shubert import Shubert
+    from bayeso_benchmarks import Shubert
 
 def test_import_two_dim_sixhumpcamel():
     import bayeso_benchmarks.two_dim_sixhumpcamel

@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 20, 2022
+# last updated: January 3, 2023
 #
 
 import numpy as np
@@ -16,6 +16,7 @@ from bayeso_benchmarks import Kim2
 from bayeso_benchmarks import Kim3
 from bayeso_benchmarks import Rastrigin
 from bayeso_benchmarks import Michalewicz
+from bayeso_benchmarks import Shubert
 
 
 TEST_EPSILON = 1e-7
@@ -94,14 +95,8 @@ def test_global_minimum_kim3():
 
     _test_global_minimum(obj_fun)
 
-def test_global_minimum_michalewicz():
-    class_fun = Michalewicz
+def test_global_minimum_shubert():
+    class_fun = Shubert
     obj_fun = class_fun()
-
-    _test_global_minimum(obj_fun)
-
-def test_global_minimum_rastrigin():
-    class_fun = Rastrigin
-    obj_fun = class_fun(2)
 
     _test_global_minimum(obj_fun)

@@ -88,9 +88,11 @@ def test_get_benchmark():
     benchmark = utils.get_benchmark('kim2')
     benchmark = utils.get_benchmark('kim3')
     benchmark = utils.get_benchmark('michalewicz')
+    benchmark = utils.get_benchmark('shubert')
     benchmark = utils.get_benchmark('sixhumpcamel')
     benchmark = utils.get_benchmark('threehumpcamel')
 
+    benchmark = utils.get_benchmark('colville')
     benchmark = utils.get_benchmark('hartmann3d')
     benchmark = utils.get_benchmark('hartmann6d')
 

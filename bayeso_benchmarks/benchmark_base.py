@@ -15,7 +15,8 @@ class Function:
         assert isinstance(global_minimizers, np.ndarray)
         assert isinstance(global_minimum, float)
         assert callable(function)
-        assert isinstance(dim_problem, int) or dim_problem is None
+        assert isinstance(dim_problem, (type(None), int))
+        assert isinstance(seed, (type(None), int))
         assert len(bounds.shape) == 2
         assert bounds.shape[1] == 2
         assert (bounds[:, 0] <= bounds[:, 1]).all()

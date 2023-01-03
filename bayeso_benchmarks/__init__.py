@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 29, 2022
+# last updated: January 3, 2023
 #
 
 
@@ -31,6 +31,7 @@ from bayeso_benchmarks.two_dim_kim1 import Kim1
 from bayeso_benchmarks.two_dim_kim2 import Kim2
 from bayeso_benchmarks.two_dim_kim3 import Kim3
 from bayeso_benchmarks.two_dim_michalewicz import Michalewicz
+from bayeso_benchmarks.two_dim_shubert import Shubert
 from bayeso_benchmarks.two_dim_sixhumpcamel import SixHumpCamel
 from bayeso_benchmarks.two_dim_threehumpcamel import ThreeHumpCamel
 
@@ -62,6 +63,7 @@ all_benchmarks = [
     Kim2,
     Kim3,
     Michalewicz,
+    Shubert,
     SixHumpCamel,
     ThreeHumpCamel,
     Colville,
