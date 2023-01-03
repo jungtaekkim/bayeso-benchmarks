@@ -62,8 +62,13 @@ def plot_2d(obj_fun,
     print(bounds)
     assert bounds.shape[0] == 2
 
-    X1 = np.linspace(bounds[0, 0], bounds[0, 1], 1000)
-    X2 = np.linspace(bounds[1, 0], bounds[1, 1], 1000)
+    if obj_fun.name == 'easom':
+        num_grids = 10000
+    else:
+        num_grids = 1000
+
+    X1 = np.linspace(bounds[0, 0], bounds[0, 1], num_grids)
+    X2 = np.linspace(bounds[1, 0], bounds[1, 1], num_grids)
     X1, X2 = np.meshgrid(X1, X2)
     X = np.concatenate((X1[..., np.newaxis], X2[..., np.newaxis]), axis=2)
     X = np.reshape(X, (X.shape[0] * X.shape[1], X.shape[2]))
