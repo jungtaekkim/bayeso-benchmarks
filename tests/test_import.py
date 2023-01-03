@@ -29,6 +29,7 @@ def test_all_benchmarks():
         'branin',
         'dejong5',
         'dropwave',
+        'easom',
         'eggholder',
         'goldsteinprice',
         'holdertable',
@@ -60,7 +61,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 28
+    assert bayeso_benchmarks.num_benchmarks == 29
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -105,6 +106,11 @@ def test_import_two_dim_dropwave():
     import bayeso_benchmarks.two_dim_dropwave
     from bayeso_benchmarks.two_dim_dropwave import DropWave
     from bayeso_benchmarks import DropWave
+
+def test_import_two_dim_easom():
+    import bayeso_benchmarks.two_dim_easom
+    from bayeso_benchmarks.two_dim_easom import Easom
+    from bayeso_benchmarks import Easom
 
 def test_import_two_dim_eggholder():
     import bayeso_benchmarks.two_dim_eggholder

@@ -24,6 +24,7 @@ from bayeso_benchmarks.two_dim_bohachevsky import Bohachevsky
 from bayeso_benchmarks.two_dim_branin import Branin
 from bayeso_benchmarks.two_dim_dejong5 import DeJong5
 from bayeso_benchmarks.two_dim_dropwave import DropWave
+from bayeso_benchmarks.two_dim_easom import Easom
 from bayeso_benchmarks.two_dim_eggholder import Eggholder
 from bayeso_benchmarks.two_dim_goldsteinprice import GoldsteinPrice
 from bayeso_benchmarks.two_dim_holdertable import HolderTable
@@ -56,6 +57,7 @@ all_benchmarks = [
     Branin,
     DeJong5,
     DropWave,
+    Easom,
     Eggholder,
     GoldsteinPrice,
     HolderTable,

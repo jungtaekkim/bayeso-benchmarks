@@ -12,23 +12,15 @@ def fun_target(bx, dim_bx):
     assert len(bx.shape) == 1
     assert bx.shape[0] == dim_bx
 
-    first_term = 0.0
-    for ind in range(1, 6):
-        first_term += ind * np.cos((ind + 1.0) * bx[0] + ind)
-
-    second_term = 0.0
-    for ind in range(1, 6):
-        second_term += ind * np.cos((ind + 1.0) * bx[1] + ind)
-
-    y = first_term * second_term
+    y = -1.0 * np.cos(bx[0]) * np.cos(bx[1]) * np.exp(-1.0 * (bx[0] - np.pi)**2 - (bx[1] - np.pi)**2)
     return y
 
 
-class Shubert(Function):
+class Easom(Function):
     def __init__(self,
         bounds=np.array([
-            [-10, 10],
-            [-10, 10],
+            [-100, 100],
+            [-100, 100],
         ]),
         seed=None
     ):
@@ -41,12 +33,12 @@ class Shubert(Function):
         assert bounds.shape[0] == dim_bx
 
         global_minimizers = np.array([
-            [-7.08350641, -7.70831374],
+            [np.pi, np.pi],
         ])
-        global_minimum = -186.73090883
+        global_minimum = -1.0
         function = lambda bx: fun_target(bx, dim_bx)
 
         try:
             super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
         except:
-            super(Shubert, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+            super(Easom, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

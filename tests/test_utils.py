@@ -81,6 +81,7 @@ def test_get_benchmark():
 
     benchmark = utils.get_benchmark('dejong5')
     benchmark = utils.get_benchmark('dropwave')
+    benchmark = utils.get_benchmark('easom')
     benchmark = utils.get_benchmark('eggholder')
     benchmark = utils.get_benchmark('goldsteinprice')
     benchmark = utils.get_benchmark('holdertable')
