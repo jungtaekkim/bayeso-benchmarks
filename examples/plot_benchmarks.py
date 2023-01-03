@@ -164,6 +164,10 @@ if __name__ == '__main__':
     obj_fun = target_class()
     plot_2d(obj_fun, 'dropwave_2d')
 
+    from bayeso_benchmarks.two_dim_easom import Easom as target_class
+    obj_fun = target_class()
+    plot_2d(obj_fun, 'easom_2d')
+
     from bayeso_benchmarks.two_dim_eggholder import Eggholder as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'eggholder_2d')
@@ -191,6 +195,10 @@ if __name__ == '__main__':
     from bayeso_benchmarks.two_dim_michalewicz import Michalewicz as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'michalewicz_2d')
+
+    from bayeso_benchmarks.two_dim_shubert import Shubert as target_class
+    obj_fun = target_class()
+    plot_2d(obj_fun, 'shubert_2d')
 
     from bayeso_benchmarks.two_dim_sixhumpcamel import SixHumpCamel as target_class
     obj_fun = target_class()
