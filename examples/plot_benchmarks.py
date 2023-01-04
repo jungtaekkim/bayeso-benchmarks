@@ -72,11 +72,11 @@ def plot_2d(obj_fun,
 
         X1 = np.concatenate([
                 X1,
-                np.linspace(np.pi - 2.0, np.pi + 2.0, num_grids_additional)
+                np.linspace(np.pi - 3.0, np.pi + 3.0, num_grids_additional)
             ], axis=0)
         X2 = np.concatenate([
                 X2,
-                np.linspace(np.pi - 2.0, np.pi + 2.0, num_grids_additional)
+                np.linspace(np.pi - 3.0, np.pi + 3.0, num_grids_additional)
             ], axis=0)
 
         X1 = np.sort(X1)
@@ -249,3 +249,7 @@ if __name__ == '__main__':
     from bayeso_benchmarks.inf_dim_sphere import Sphere as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'sphere_2d')
+
+    from bayeso_benchmarks.inf_dim_zakharov import Zakharov as target_class
+    obj_fun = target_class(2)
+    plot_2d(obj_fun, 'zakharov_2d')
