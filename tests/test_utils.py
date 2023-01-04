@@ -51,6 +51,11 @@ def test_get_benchmark():
     benchmark = utils.get_benchmark('sphere', dim=16, seed=None)
 
     with pytest.raises(AssertionError) as error:
+        benchmark = utils.get_benchmark('zakharov')
+
+    benchmark = utils.get_benchmark('zakharov', dim=16, seed=None)
+
+    with pytest.raises(AssertionError) as error:
         benchmark = utils.get_benchmark('constant')
     with pytest.raises(AssertionError) as error:
         benchmark = utils.get_benchmark('constant', constant=None)

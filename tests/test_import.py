@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 30, 2022
+# last updated: January 4, 2023
 #
 
 
@@ -17,6 +17,7 @@ def test_all_benchmarks():
         'rastrigin',
         'rosenbrock',
         'sphere',
+        'zakharov',
         'constant',
         'gramacyandlee2012',
         'linear',
@@ -61,7 +62,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 29
+    assert bayeso_benchmarks.num_benchmarks == 30
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -201,3 +202,8 @@ def test_import_inf_dim_sphere():
     import bayeso_benchmarks.inf_dim_sphere
     from bayeso_benchmarks.inf_dim_sphere import Sphere
     from bayeso_benchmarks import Sphere
+
+def test_import_inf_dim_zakharov():
+    import bayeso_benchmarks.inf_dim_zakharov
+    from bayeso_benchmarks.inf_dim_zakharov import Zakharov
+    from bayeso_benchmarks import Zakharov

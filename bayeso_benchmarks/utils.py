@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 29, 2022
+# last updated: January 4, 2023
 #
 
 import numpy as np
@@ -27,7 +27,8 @@ def get_benchmark(str_fun, seed=None, **kwargs):
         'levy',
         'rastrigin',
         'rosenbrock',
-        'sphere'
+        'sphere',
+        'zakharov',
     ]:
         assert 'dim' in kwargs
         dim = kwargs['dim']

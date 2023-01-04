@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: January 3, 2023
+# last updated: January 4, 2023
 #
 
 
@@ -13,6 +13,7 @@ from bayeso_benchmarks.inf_dim_levy import Levy
 from bayeso_benchmarks.inf_dim_rastrigin import Rastrigin
 from bayeso_benchmarks.inf_dim_rosenbrock import Rosenbrock
 from bayeso_benchmarks.inf_dim_sphere import Sphere
+from bayeso_benchmarks.inf_dim_zakharov import Zakharov
 
 from bayeso_benchmarks.one_dim_constant import Constant
 from bayeso_benchmarks.one_dim_gramacyandlee2012 import GramacyAndLee2012
@@ -48,6 +49,7 @@ all_benchmarks = [
     Rastrigin,
     Rosenbrock,
     Sphere,
+    Zakharov,
     Constant,
     GramacyAndLee2012,
     Linear,
