@@ -62,19 +62,21 @@ def plot_2d(obj_fun,
     print(bounds)
     assert bounds.shape[0] == 2
 
-    num_grids = 400
+    num_grids = 300
 
     X1 = np.linspace(bounds[0, 0], bounds[0, 1], num_grids)
     X2 = np.linspace(bounds[1, 0], bounds[1, 1], num_grids)
 
     if obj_fun.name == 'easom':
+        num_grids_additional = 300
+
         X1 = np.concatenate([
                 X1,
-                np.linspace(np.pi - 1.0, np.pi + 1.0, 200)
+                np.linspace(np.pi - 2.0, np.pi + 2.0, num_grids_additional)
             ], axis=0)
         X2 = np.concatenate([
                 X2,
-                np.linspace(np.pi - 1.0, np.pi + 1.0, 200)
+                np.linspace(np.pi - 2.0, np.pi + 2.0, num_grids_additional)
             ], axis=0)
 
         X1 = np.sort(X1)
