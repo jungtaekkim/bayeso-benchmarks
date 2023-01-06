@@ -23,22 +23,18 @@ def fun_target(bx, dim_bx):
 
 
 class Colville(Function):
-    def __init__(self,
-        bounds=np.array([
-            [-10.0, 10.0],
-            [-10.0, 10.0],
-            [-10.0, 10.0],
-            [-10.0, 10.0],
-        ]),
-        seed=None
-    ):
-        assert isinstance(bounds, np.ndarray)
+    def __init__(self, seed=None):
         assert isinstance(seed, (type(None), int))
-        assert len(bounds.shape) == 2
-        assert bounds.shape[1] == 2
 
         dim_bx = 4
+        bounds = np.array([
+            [-10.0, 10.0],
+            [-10.0, 10.0],
+            [-10.0, 10.0],
+            [-10.0, 10.0],
+        ])
         assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
             [1.0, 1.0, 1.0, 1.0],

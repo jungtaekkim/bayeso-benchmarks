@@ -45,6 +45,9 @@ class Branin(Function):
             [-5, 10],
             [0, 15],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [-np.pi, 12.275],
             [np.pi, 2.275],

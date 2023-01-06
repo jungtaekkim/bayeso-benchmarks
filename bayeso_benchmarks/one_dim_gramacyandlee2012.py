@@ -24,6 +24,9 @@ class GramacyAndLee2012(Function):
         bounds = np.array([
             [0.5, 2.5],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [0.54856405],
         ])

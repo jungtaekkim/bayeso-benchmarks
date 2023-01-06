@@ -17,20 +17,16 @@ def fun_target(bx, dim_bx):
 
 
 class Bukin6(Function):
-    def __init__(self,
-        bounds=np.array([
-            [-15, -5],
-            [-3, 3],
-        ]),
-        seed=None
-    ):
-        assert isinstance(bounds, np.ndarray)
+    def __init__(self, seed=None):
         assert isinstance(seed, (type(None), int))
-        assert len(bounds.shape) == 2
-        assert bounds.shape[1] == 2
 
         dim_bx = 2
+        bounds = np.array([
+            [-15, -5],
+            [-3, 3],
+        ])
         assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
             [-10.0, 1.0],
