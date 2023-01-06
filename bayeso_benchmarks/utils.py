@@ -24,6 +24,7 @@ def get_benchmark(str_fun, seed=None, **kwargs):
     if str_fun in [
         'ackley',
         'cosines',
+        'griewank',
         'levy',
         'rastrigin',
         'rosenbrock',

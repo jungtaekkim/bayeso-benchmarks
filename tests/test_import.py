@@ -63,7 +63,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 31
+    assert bayeso_benchmarks.num_benchmarks == 32
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -188,6 +188,16 @@ def test_import_inf_dim_ackley():
     import bayeso_benchmarks.inf_dim_ackley
     from bayeso_benchmarks.inf_dim_ackley import Ackley
     from bayeso_benchmarks import Ackley
+
+def test_import_inf_dim_cosines():
+    import bayeso_benchmarks.inf_dim_cosines
+    from bayeso_benchmarks.inf_dim_cosines import Cosines
+    from bayeso_benchmarks import Cosines
+
+def test_import_inf_dim_griewank():
+    import bayeso_benchmarks.inf_dim_griewank
+    from bayeso_benchmarks.inf_dim_griewank import Griewank
+    from bayeso_benchmarks import Griewank
 
 def test_import_inf_dim_levy():
     import bayeso_benchmarks.inf_dim_levy

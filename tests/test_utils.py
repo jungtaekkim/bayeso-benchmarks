@@ -31,6 +31,11 @@ def test_get_benchmark():
     benchmark = utils.get_benchmark('cosines', dim=4, seed=None)
 
     with pytest.raises(AssertionError) as error:
+        benchmark = utils.get_benchmark('griewank')
+
+    benchmark = utils.get_benchmark('griewank', dim=4, seed=None)
+
+    with pytest.raises(AssertionError) as error:
         benchmark = utils.get_benchmark('levy')
 
     benchmark = utils.get_benchmark('levy', dim=2, seed=None)
