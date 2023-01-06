@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: October 20, 2022
+# last updated: January 6, 2023
 #
 
 import numpy as np
@@ -84,6 +84,7 @@ def test_get_benchmark():
     benchmark = utils.get_benchmark('branin')
     print(benchmark.output(np.array([1.0, 1.0])))
 
+    benchmark = utils.get_benchmark('bukin6')
     benchmark = utils.get_benchmark('dejong5')
     benchmark = utils.get_benchmark('dropwave')
     benchmark = utils.get_benchmark('easom')

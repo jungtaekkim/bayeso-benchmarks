@@ -28,6 +28,7 @@ def test_all_benchmarks():
         'beale',
         'bohachevsky',
         'branin',
+        'bukin6',
         'dejong5',
         'dropwave',
         'easom',
@@ -62,7 +63,7 @@ def test_all_benchmarks():
 def test_num_benchmarks():
     import bayeso_benchmarks
 
-    assert bayeso_benchmarks.num_benchmarks == 30
+    assert bayeso_benchmarks.num_benchmarks == 31
 
 def test_import_benchmark_base():
     import bayeso_benchmarks.benchmark_base
@@ -102,6 +103,11 @@ def test_import_two_dim_branin():
     import bayeso_benchmarks.two_dim_branin
     from bayeso_benchmarks.two_dim_branin import Branin
     from bayeso_benchmarks import Branin
+
+def test_import_two_dim_bukin6():
+    import bayeso_benchmarks.two_dim_bukin6
+    from bayeso_benchmarks.two_dim_bukin6 import Bukin6
+    from bayeso_benchmarks import Bukin6
 
 def test_import_two_dim_dropwave():
     import bayeso_benchmarks.two_dim_dropwave

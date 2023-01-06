@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: January 4, 2023
+# last updated: January 6, 2023
 #
 
 
@@ -23,6 +23,7 @@ from bayeso_benchmarks.one_dim_step import Step
 from bayeso_benchmarks.two_dim_beale import Beale
 from bayeso_benchmarks.two_dim_bohachevsky import Bohachevsky
 from bayeso_benchmarks.two_dim_branin import Branin
+from bayeso_benchmarks.two_dim_bukin6 import Bukin6
 from bayeso_benchmarks.two_dim_dejong5 import DeJong5
 from bayeso_benchmarks.two_dim_dropwave import DropWave
 from bayeso_benchmarks.two_dim_easom import Easom
@@ -57,6 +58,7 @@ all_benchmarks = [
     Beale,
     Bohachevsky,
     Branin,
+    Bukin6,
     DeJong5,
     DropWave,
     Easom,
