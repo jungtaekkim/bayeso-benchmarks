@@ -35,6 +35,9 @@ class DeJong5(Function):
             [-65.536, 65.536],
             [-65.536, 65.536],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [-31.97707837, -31.97795471],
             [-31.99140499, -31.99140499],

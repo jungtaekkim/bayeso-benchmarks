@@ -30,6 +30,9 @@ class Michalewicz(Function):
             [0.0, np.pi],
             [0.0, np.pi],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [2.20290552, 1.57079632],
         ])

@@ -30,6 +30,9 @@ class Kim2(Function):
             [-128.0, 128.0],
             [-128.0, 128.0],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [-2.1013466, 34.14526252],
         ])

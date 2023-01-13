@@ -25,6 +25,9 @@ class HolderTable(Function):
             [-10.0, 10.0],
             [-10.0, 10.0],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [8.05502347, 9.66459002],
             [8.05502347, -9.66459002],

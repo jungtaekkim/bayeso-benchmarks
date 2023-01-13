@@ -25,6 +25,9 @@ class Bohachevsky(Function):
             [-100.0, 100.0],
             [-100.0, 100.0],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [0.0, 0.0],
         ])

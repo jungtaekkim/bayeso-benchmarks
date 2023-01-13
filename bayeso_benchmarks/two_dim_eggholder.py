@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# last updated: January 13, 2023
 #
 
 import numpy as np
@@ -17,20 +17,16 @@ def fun_target(bx, dim_bx):
 
 
 class Eggholder(Function):
-    def __init__(self,
-        bounds=np.array([
-            [-512.0, 512.0],
-            [-512.0, 512.0],
-        ]),
-        seed=None
-    ):
-        assert isinstance(bounds, np.ndarray)
+    def __init__(self, seed=None):
         assert isinstance(seed, (type(None), int))
-        assert len(bounds.shape) == 2
-        assert bounds.shape[1] == 2
 
         dim_bx = 2
+        bounds = np.array([
+            [-512.0, 512.0],
+            [-512.0, 512.0],
+        ])
         assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
             [512.0, 404.2319],
