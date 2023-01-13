@@ -56,9 +56,12 @@ def plot_2d(obj_fun,
     str_y_axis=r'$f(\mathbf{x})$',
     str_figures='../figures',
     show_figure=False,
+    bounds=None, # for zooming in on part of a figure
 ):
     print(str_fun)
-    bounds = obj_fun.get_bounds()
+
+    if bounds is None:
+        bounds = obj_fun.get_bounds()
     print(bounds)
     assert bounds.shape[0] == 2
 
@@ -174,6 +177,10 @@ if __name__ == '__main__':
     obj_fun = target_class()
     plot_2d(obj_fun, 'branin_2d')
 
+    from bayeso_benchmarks.two_dim_bukin6 import Bukin6 as target_class
+    obj_fun = target_class()
+    plot_2d(obj_fun, 'bukin6_2d')
+
     from bayeso_benchmarks.two_dim_dejong5 import DeJong5 as target_class
     obj_fun = target_class()
     plot_2d(obj_fun, 'dejong5_2d')
@@ -229,6 +236,11 @@ if __name__ == '__main__':
     from bayeso_benchmarks.inf_dim_ackley import Ackley as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'ackley_2d')
+
+    from bayeso_benchmarks.inf_dim_griewank import Griewank as target_class
+    obj_fun = target_class(2)
+    plot_2d(obj_fun, 'griewank_2d')
+    plot_2d(obj_fun, 'griewank_zoom_in_2d', bounds=np.array([[-50, 50], [-50, 50]]))
 
     from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
     obj_fun = target_class(2)
