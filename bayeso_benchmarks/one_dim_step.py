@@ -49,6 +49,9 @@ class Step(Function):
         bounds = np.array([
             [np.min(steps), np.max(steps)],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [steps[np.argmin(step_values)]],
         ])

@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: July 12, 2021
+# last updated: January 3, 2023
 #
 
 import numpy as np
@@ -14,7 +14,9 @@ from bayeso_benchmarks import HolderTable
 from bayeso_benchmarks import Kim1
 from bayeso_benchmarks import Kim2
 from bayeso_benchmarks import Kim3
+from bayeso_benchmarks import Rastrigin
 from bayeso_benchmarks import Michalewicz
+from bayeso_benchmarks import Shubert
 
 
 TEST_EPSILON = 1e-7
@@ -36,7 +38,7 @@ def _test_global_minimum(obj_fun):
 
     ind_minimum = np.argmin(np.squeeze(list_by))
     bx_best = list_bx[ind_minimum]
-    y_best = list_by[ind_minimum][0]
+    y_best = list_by[ind_minimum]
 
     print(bx_best)
     print(obj_fun.global_minimum)
@@ -93,8 +95,8 @@ def test_global_minimum_kim3():
 
     _test_global_minimum(obj_fun)
 
-def test_global_minimum_michalewicz():
-    class_fun = Michalewicz
+def test_global_minimum_shubert():
+    class_fun = Shubert
     obj_fun = class_fun()
 
     _test_global_minimum(obj_fun)

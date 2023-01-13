@@ -25,6 +25,9 @@ class SixHumpCamel(Function):
             [-3.0, 3.0],
             [-2.0, 2.0],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [0.0898, -0.7126],
             [-0.0898, 0.7126],

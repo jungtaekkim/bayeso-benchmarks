@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# last updated: December 4, 2022
 #
 
 import numpy as np
@@ -9,6 +9,7 @@ import pytest
 from bayeso_benchmarks.one_dim_gramacyandlee2012 import *
 
 class_fun = GramacyAndLee2012
+str_name = 'gramacyandlee2012'
 
 TEST_EPSILON = 1e-5
 
@@ -40,3 +41,10 @@ def test_output():
     print(obj_fun.output(grids))
     print(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
     assert np.all(np.abs(obj_fun.output(grids) - truths_grids) < TEST_EPSILON)
+
+def test_name():
+    obj_fun = class_fun()
+    assert obj_fun.name == str_name
+
+    assert obj_fun.__class__.__name__.lower() == str_name
+    assert obj_fun.__class__.__qualname__.lower() == str_name

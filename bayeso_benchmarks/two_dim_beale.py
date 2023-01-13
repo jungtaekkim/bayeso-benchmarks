@@ -25,6 +25,9 @@ class Beale(Function):
             [-4.5, 4.5],
             [-4.5, 4.5],
         ])
+        assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
+
         global_minimizers = np.array([
             [3.0, 0.5],
         ])

@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: October 27, 2021
+# last updated: December 4, 2022
 #
 
 import numpy as np
@@ -9,6 +9,7 @@ import pytest
 from bayeso_benchmarks.two_dim_kim2 import *
 
 class_fun = Kim2
+str_name = 'kim2'
 
 TEST_EPSILON = 1e-5
 SCALE_NOISE = 2.0
@@ -102,3 +103,10 @@ def test_output_gaussian_noise():
     print(outputs)
     print(np.abs(outputs - truths_grids) < TEST_EPSILON)
     assert np.all(np.abs(outputs - truths_grids) < TEST_EPSILON)
+
+def test_name():
+    obj_fun = class_fun()
+    assert obj_fun.name == str_name
+
+    assert obj_fun.__class__.__name__.lower() == str_name
+    assert obj_fun.__class__.__qualname__.lower() == str_name

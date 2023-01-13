@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: May 1, 2021
+# last updated: December 13, 2022
 #
 
 import numpy as np
@@ -8,14 +8,15 @@ import numpy as np
 EPSILON = 1e-4
 
 
-class Function(object):
+class Function:
     def __init__(self, dimensionality, bounds, global_minimizers, global_minimum, function, dim_problem=None, seed=None):
         assert isinstance(dimensionality, int) or dimensionality is np.inf
         assert isinstance(bounds, np.ndarray)
         assert isinstance(global_minimizers, np.ndarray)
         assert isinstance(global_minimum, float)
         assert callable(function)
-        assert isinstance(dim_problem, int) or dim_problem is None
+        assert isinstance(dim_problem, (type(None), int))
+        assert isinstance(seed, (type(None), int))
         assert len(bounds.shape) == 2
         assert bounds.shape[1] == 2
         assert (bounds[:, 0] <= bounds[:, 1]).all()
@@ -30,6 +31,7 @@ class Function(object):
         self.random_state = np.random.RandomState(seed)
 
         self.validate_properties()
+        self.set_name()
 
     @property
     def dimensionality(self):
@@ -46,6 +48,14 @@ class Function(object):
     @property
     def global_minimum(self):
         return self._global_minimum
+
+    def set_name(self):
+        name = self.__class__.__name__.lower()
+
+        if self.dimensionality is np.inf:
+            self.name = f'{name}_{self.dim_problem}'
+        else:
+            self.name = name
 
     def get_bounds(self):
         if self.dimensionality is np.inf:
@@ -134,7 +144,7 @@ class Function(object):
 
         noise = self.random_state.randn(num_X)
         mask = self.random_state.uniform(low=0.0, high=1.0, size=num_X) < sparsity
-        noise *= mask.astype(np.float)
+        noise *= mask.astype(float)
         by += scale_noise * noise
 
         Y = np.expand_dims(by, axis=1)
@@ -172,7 +182,7 @@ class Function(object):
 
         noise = self.random_state.standard_t(dof, size=num_X)
         mask = self.random_state.uniform(low=0.0, high=1.0, size=num_X) < sparsity
-        noise *= mask.astype(np.float)
+        noise *= mask.astype(float)
         by += scale_noise * noise
 
         Y = np.expand_dims(by, axis=1)
@@ -228,3 +238,6 @@ class Function(object):
         points = bounds[:, 0] + (bounds[:, 1] - bounds[:, 0]) * points
 
         return points
+
+    def __call__(self, X):
+        return self.output(X)

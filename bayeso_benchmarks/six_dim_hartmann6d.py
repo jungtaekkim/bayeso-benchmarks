@@ -38,24 +38,20 @@ def fun_target(bx, dim_bx):
 
 
 class Hartmann6D(Function):
-    def __init__(self,
-        bounds=np.array([
-            [0.0, 1.0],
-            [0.0, 1.0],
-            [0.0, 1.0],
-            [0.0, 1.0],
-            [0.0, 1.0],
-            [0.0, 1.0],
-        ]),
-        seed=None
-    ):
-        assert isinstance(bounds, np.ndarray)
+    def __init__(self, seed=None):
         assert isinstance(seed, (type(None), int))
-        assert len(bounds.shape) == 2
-        assert bounds.shape[1] == 2
 
         dim_bx = 6
+        bounds = np.array([
+            [0.0, 1.0],
+            [0.0, 1.0],
+            [0.0, 1.0],
+            [0.0, 1.0],
+            [0.0, 1.0],
+            [0.0, 1.0],
+        ])
         assert bounds.shape[0] == dim_bx
+        assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
             [0.20169, 0.150011, 0.476874, 0.275332, 0.311652, 0.6573],
