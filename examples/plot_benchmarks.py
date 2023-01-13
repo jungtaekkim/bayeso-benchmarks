@@ -9,9 +9,12 @@ def plot_1d(obj_fun,
     str_y_axis=r'$f(x)$',
     str_figures='../figures',
     show_figure=False,
+    bounds=None, # for zooming in on part of a figure
 ):
     print(str_fun)
-    bounds = obj_fun.get_bounds()
+
+    if bounds is None:
+        bounds = obj_fun.get_bounds()
     print(bounds)
     assert bounds.shape[0] == 1
 
@@ -142,7 +145,7 @@ if __name__ == '__main__':
     # one dim.
     from bayeso_benchmarks.one_dim_gramacyandlee2012 import GramacyAndLee2012 as target_class
     obj_fun = target_class()
-    plot_1d(obj_fun, 'gramacyandlee2012')
+    plot_1d(obj_fun, 'gramacyandlee2012_1d')
 
     from bayeso_benchmarks.inf_dim_ackley import Ackley as target_class
     obj_fun = target_class(1)
@@ -151,6 +154,11 @@ if __name__ == '__main__':
     from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
     obj_fun = target_class(1)
     plot_1d(obj_fun, 'cosines_1d')
+
+    from bayeso_benchmarks.inf_dim_griewank import Griewank as target_class
+    obj_fun = target_class(1)
+    plot_1d(obj_fun, 'griewank_1d')
+    plot_1d(obj_fun, 'griewank_zoom_in_1d', bounds=np.array([[-50, 50]]))
 
     from bayeso_benchmarks.inf_dim_levy import Levy as target_class
     obj_fun = target_class(1)
@@ -163,6 +171,10 @@ if __name__ == '__main__':
     from bayeso_benchmarks.inf_dim_sphere import Sphere as target_class
     obj_fun = target_class(1)
     plot_1d(obj_fun, 'sphere_1d')
+
+    from bayeso_benchmarks.inf_dim_zakharov import Zakharov as target_class
+    obj_fun = target_class(1)
+    plot_1d(obj_fun, 'zakharov_1d')
 
     # two dim.
     from bayeso_benchmarks.two_dim_beale import Beale as target_class
@@ -237,14 +249,14 @@ if __name__ == '__main__':
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'ackley_2d')
 
+    from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
+    obj_fun = target_class(2)
+    plot_2d(obj_fun, 'cosines_2d')
+
     from bayeso_benchmarks.inf_dim_griewank import Griewank as target_class
     obj_fun = target_class(2)
     plot_2d(obj_fun, 'griewank_2d')
     plot_2d(obj_fun, 'griewank_zoom_in_2d', bounds=np.array([[-50, 50], [-50, 50]]))
-
-    from bayeso_benchmarks.inf_dim_cosines import Cosines as target_class
-    obj_fun = target_class(2)
-    plot_2d(obj_fun, 'cosines_2d')
 
     from bayeso_benchmarks.inf_dim_levy import Levy as target_class
     obj_fun = target_class(2)
