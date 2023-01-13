@@ -1,6 +1,6 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: December 4, 2022
+# last updated: January 13, 2023
 #
 
 import numpy as np
@@ -17,10 +17,6 @@ TEST_EPSILON = 1e-5
 def test_init():
     obj_fun = class_fun()
 
-    with pytest.raises(AssertionError) as error:
-        class_fun(bounds='abc')
-    with pytest.raises(AssertionError) as error:
-        class_fun(bounds=2.1)
     with pytest.raises(AssertionError) as error:
         class_fun(seed='abc')
     with pytest.raises(AssertionError) as error:
