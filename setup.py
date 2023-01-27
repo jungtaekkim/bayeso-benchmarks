@@ -8,7 +8,7 @@ with open(path_requirements) as f:
 
 setup(
     name='bayeso-benchmarks',
-    version='0.1.7',
+    version='0.2.0',
     author='Jungtaek Kim',
     author_email='jtkim@postech.ac.kr',
     url='https://bayeso.org',

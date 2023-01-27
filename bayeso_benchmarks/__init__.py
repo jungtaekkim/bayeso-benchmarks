@@ -1,10 +1,10 @@
 #
 # author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: January 6, 2023
+# last updated: January 27, 2023
 #
 
 
-__version__ = '0.1.7'
+__version__ = '0.2.0'
 
 
 from bayeso_benchmarks.inf_dim_ackley import Ackley

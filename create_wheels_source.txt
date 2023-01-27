@@ -1,7 +1,7 @@
 # Merge a working branch to a main branch first.
 #
 # Install setuptools wheel first, then command it.
-python2 setup.py sdist bdist_wheel
+python2 setup.py sdist bdist_wheel # It is deprecated.
 python3 setup.py sdist bdist_wheel
 
 # Install twine.
