@@ -3,6 +3,7 @@
 </p>
 
 # BayesO Benchmarks: Benchmark Functions for Bayesian Optimization
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7577331.svg)](https://doi.org/10.5281/zenodo.7577331)
 [![Build Status](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml/badge.svg)](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
