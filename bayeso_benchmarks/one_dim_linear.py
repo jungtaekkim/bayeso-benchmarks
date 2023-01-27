@@ -47,7 +47,4 @@ class Linear(Function):
             global_minimum = slope * bounds[0, 1]
         function = lambda bx: fun_target(bx, dim_bx, slope)
 
-        try:
-            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
-        except:
-            super(Linear, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

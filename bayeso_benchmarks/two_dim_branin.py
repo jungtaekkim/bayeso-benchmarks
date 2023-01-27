@@ -56,7 +56,4 @@ class Branin(Function):
         global_minimum = 0.3978874
         function = lambda bx: fun_target(bx, dim_bx, a, b, c, r, s, t)
 
-        try:
-            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
-        except:
-            super(Branin, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
