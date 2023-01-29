@@ -73,3 +73,15 @@ Y_noise = obj_fun.output_gaussian_noise(X)
 
 ## License
 [MIT License](LICENSE)
+
+## Citation
+
+```
+@software{KimJ2023software,
+    author={Kim, Jungtaek},
+    title={{BayesO Benchmarks}: Benchmark Functions for {Bayesian} Optimization},
+    doi={10.5281/zenodo.7577331},
+    url={https://github.com/jungtaekkim/bayeso-benchmarks},
+    year={2023}
+}
+```
