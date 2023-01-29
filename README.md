@@ -71,11 +71,7 @@ Y = obj_fun.output(X)
 Y_noise = obj_fun.output_gaussian_noise(X)
 ```
 
-## License
-[MIT License](LICENSE)
-
 ## Citation
-
 ```
 @software{KimJ2023software,
     author={Kim, Jungtaek},
@@ -85,3 +81,6 @@ Y_noise = obj_fun.output_gaussian_noise(X)
     year={2023}
 }
 ```
+
+## License
+[MIT License](LICENSE)
