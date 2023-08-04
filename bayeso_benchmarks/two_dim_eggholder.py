@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: January 13, 2023
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -31,7 +31,7 @@ class Eggholder(Function):
         global_minimizers = np.array([
             [512.0, 404.2319],
         ])
-        global_minimum = -959.6406627
+        global_minimum = -959.6406627209
         function = lambda bx: fun_target(bx, dim_bx)
 
         super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

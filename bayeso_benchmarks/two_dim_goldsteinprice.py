@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -39,7 +39,7 @@ class GoldsteinPrice(Function):
         global_minimizers = np.array([
             [0.0, -1.0],
         ])
-        global_minimum = 3.0
+        global_minimum = 2.9999999999
         function = lambda bx: fun_target(bx, dim_bx)
 
         super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

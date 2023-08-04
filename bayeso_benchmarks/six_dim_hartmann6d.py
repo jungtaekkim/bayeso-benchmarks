@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -54,9 +54,9 @@ class Hartmann6D(Function):
         assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
-            [0.20169, 0.150011, 0.476874, 0.275332, 0.311652, 0.6573],
+            [0.20168949, 0.15001068, 0.47687397, 0.27533242, 0.3116516, 0.65730054],
         ])
-        global_minimum = -3.322368
+        global_minimum = -3.3223680115
         function = lambda bx: fun_target(bx, dim_bx)
 
         super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

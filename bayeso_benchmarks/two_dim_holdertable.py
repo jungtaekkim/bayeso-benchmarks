@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -34,7 +34,7 @@ class HolderTable(Function):
             [-8.05502347, 9.66459002],
             [-8.05502347, -9.66459002],
         ])
-        global_minimum = -19.2085026
+        global_minimum = -19.2085025679
         function = lambda bx: fun_target(bx, dim_bx)
 
         super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

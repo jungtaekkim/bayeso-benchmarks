@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -48,7 +48,7 @@ class DeJong5(Function):
             [-32.0400369, -31.9824982],
             [-31.98255954, -32.04163256],
         ])
-        global_minimum = 0.9980038
+        global_minimum = 0.9980038378
         function = lambda bx: fun_target(bx, dim_bx)
 
         super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

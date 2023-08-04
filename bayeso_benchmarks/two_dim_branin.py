@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -53,7 +53,7 @@ class Branin(Function):
             [np.pi, 2.275],
             [9.42478, 2.475],
         ])
-        global_minimum = 0.3978874
+        global_minimum = 0.3978873577
         function = lambda bx: fun_target(bx, dim_bx, a, b, c, r, s, t)
 
         super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

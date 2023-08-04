@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -29,10 +29,10 @@ class SixHumpCamel(Function):
         assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
-            [0.0898, -0.7126],
-            [-0.0898, 0.7126],
+            [0.08984201, -0.7126564],
+            [-0.08984201, 0.7126564],
         ])
-        global_minimum = -1.0316
+        global_minimum = -1.0316284535
         function = lambda bx: fun_target(bx, dim_bx)
 
         super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

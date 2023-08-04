@@ -1,3 +1,8 @@
+#
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
+#
+
 import numpy as np
 import os
 import matplotlib.pyplot as plt
