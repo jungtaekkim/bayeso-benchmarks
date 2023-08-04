@@ -29,7 +29,7 @@ class Eggholder(Function):
         assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
-            [512.0, 404.2319],
+            [512.0, 404.2318066],
         ])
         global_minimum = -959.6406627209
         function = lambda bx: fun_target(bx, dim_bx)
