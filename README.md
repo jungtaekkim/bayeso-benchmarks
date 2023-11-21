@@ -1,9 +1,9 @@
 <p align="center">
-<img src="https://github.com/jungtaekkim/bayeso/blob/main/docs/_static/assets/logo_bayeso_capitalized.svg" width="400" />
+<img src="https://raw.githubusercontent.com/jungtaekkim/bayeso/main/docs/_static/assets/logo_bayeso_capitalized.svg" width="400" />
 </p>
 
 # BayesO Benchmarks: Benchmark Functions for Bayesian Optimization
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7577331.svg)](https://doi.org/10.5281/zenodo.7577331)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7577330.svg)](https://doi.org/10.5281/zenodo.7577330)
 [![Build Status](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml/badge.svg)](https://github.com/jungtaekkim/bayeso-benchmarks/actions/workflows/pytest.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -76,9 +76,9 @@ Y_noise = obj_fun.output_gaussian_noise(X)
 @misc{KimJ2023software,
     author={Kim, Jungtaek},
     title={{BayesO Benchmarks}: Benchmark Functions for {Bayesian} Optimization},
-    doi={10.5281/zenodo.7577331},
+    doi={10.5281/zenodo.7577330},
     url={https://github.com/jungtaekkim/bayeso-benchmarks},
-    howpublished={\url{https://doi.org/10.5281/zenodo.7577331}},
+    howpublished={\url{https://doi.org/10.5281/zenodo.7577330}},
     year={2023}
 }
 ```
