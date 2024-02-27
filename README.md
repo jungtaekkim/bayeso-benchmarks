@@ -21,7 +21,7 @@ You can choose one of three installation options.
 To install the released version in PyPI repository, command it.
 
 ```shell
-$ pip install bayeso-benchmarks
+pip install bayeso-benchmarks
 ```
 
 * Using source code (for developer installation)
@@ -29,7 +29,7 @@ $ pip install bayeso-benchmarks
 To install `bayeso-benchmarks` from source code, command the following.
 
 ```shell
-$ pip install .
+pip install .
 ```
 in the `bayeso-benchmarks` root.
 
@@ -38,13 +38,13 @@ in the `bayeso-benchmarks` root.
 To use editable development mode, command the following.
 
 ```shell
-$ pip install -e .
+pip install -e .
 ```
 in the `bayeso-benchmarks` root.
 
 If you want to install Python packages for development, you can simply command it by adding `[dev]`.
 ```shell
-$ pip install -e .[dev]
+pip install -e .[dev]
 ```
 
 * Uninstallation
@@ -52,7 +52,7 @@ $ pip install -e .[dev]
 If you would like to uninstall `bayeso-benchmarks`, command it.
 
 ```shell
-$ pip uninstall bayeso-benchmarks
+pip uninstall bayeso-benchmarks
 ```
 
 ## Simple Example
