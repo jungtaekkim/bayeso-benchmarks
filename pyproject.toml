@@ -33,7 +33,7 @@ Homepage = "https://bayeso.org"
 Source = "https://github.com/jungtaekkim/bayeso-benchmarks"
 Issues = "https://github.com/jungtaekkim/bayeso-benchmarks/issues"
 
-[tool.pip-compile.optional-dependencies]
+[project.optional-dependencies]
 dev = [
     "pytest",
     "scipy",
