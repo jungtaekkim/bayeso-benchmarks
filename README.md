@@ -42,6 +42,11 @@ $ pip install -e .
 ```
 in the `bayeso-benchmarks` root.
 
+If you want to install Python packages for development, you can simply command it by adding `[dev]`.
+```shell
+$ pip install -e .[dev]
+```
+
 * Uninstallation
 
 If you would like to uninstall `bayeso-benchmarks`, command it.
@@ -49,12 +54,6 @@ If you would like to uninstall `bayeso-benchmarks`, command it.
 ```shell
 $ pip uninstall bayeso-benchmarks
 ```
-
-## Required Packages
-Mandatory pacakges are inlcuded in `requirements.txt`.
-The following `requirements` files include the package list, the purpose of which is described as follows.
-
-* `requirements-dev.txt`: It is for developing the `bayeso-benchmarks` package.
 
 ## Simple Example
 A simple example on Branin function is shown below.
