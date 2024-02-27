@@ -36,6 +36,7 @@ Issues = "https://github.com/jungtaekkim/bayeso-benchmarks/issues"
 [project.optional-dependencies]
 dev = [
     "pytest",
+    "wheel",
     "twine",
     "scipy",
     "matplotlib",
