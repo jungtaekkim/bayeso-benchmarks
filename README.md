@@ -26,7 +26,7 @@ $ pip install bayeso-benchmarks
 
 * Using source code (for developer installation)
 
-To install `bayeso-benchmarks` from source code, command
+To install `bayeso-benchmarks` from source code, command the following.
 
 ```shell
 $ pip install .
@@ -35,11 +35,10 @@ in the `bayeso-benchmarks` root.
 
 * Using source code (for editable development mode)
 
-To use editable development mode, command
+To use editable development mode, command the following.
 
 ```shell
-$ pip install -r requirements.txt
-$ python setup.py develop
+$ pip install -e .
 ```
 in the `bayeso-benchmarks` root.
 
