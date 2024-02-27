@@ -22,6 +22,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install .[dev]
+          pip list
       - name: Run pytest
         run: |
           pytest
