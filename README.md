@@ -42,10 +42,8 @@ pip install -e .
 ```
 in the `bayeso-benchmarks` root.
 
-If you want to install Python packages for development, you can simply command it by adding `[dev]`.
-```shell
-pip install -e .[dev]
-```
+If you want to install the packages required for development, you can simply add `[dev]`.
+For example, `pip install .[dev]` or `pip install -e .[dev]`.
 
 * Uninstallation
 
