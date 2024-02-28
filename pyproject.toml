@@ -3,7 +3,6 @@ build-backend = "setuptools.build_meta"
 requires = [
     "setuptools",
     "setuptools-scm",
-    "numpy",
 ]
 
 [tool.setuptools]
@@ -17,7 +16,10 @@ authors = [
 ]
 description = "Benchmark functions for Bayesian optimization"
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.7"
+dependencies = [
+    "numpy",
+]
 license = {text = "MIT"}
 classifiers = [
     "Programming Language :: Python :: 3",
