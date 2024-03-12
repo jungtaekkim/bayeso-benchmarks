@@ -1,4 +1,4 @@
-# 0. (If needed) Install setuptools, wheel, and twine.
+# 0. (If needed) Install setuptools, wheel, build, and twine.
 
 # 1. Merge a working branch to the main branch first.
 
