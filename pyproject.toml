@@ -1,0 +1,46 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools",
+    "setuptools-scm",
+]
+
+[tool.setuptools]
+packages = ["bayeso_benchmarks"]
+
+[project]
+name = "bayeso-benchmarks"
+version = "0.2.0"
+authors = [
+    {name = "Jungtaek Kim", email = "jungtaek.kim.mail@gmail.com"},
+]
+description = "Benchmark functions for Bayesian optimization"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "numpy",
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://bayeso.org"
+Source = "https://github.com/jungtaekkim/bayeso-benchmarks"
+Issues = "https://github.com/jungtaekkim/bayeso-benchmarks/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "wheel",
+    "build",
+    "twine",
+    "scipy",
+    "matplotlib",
+]

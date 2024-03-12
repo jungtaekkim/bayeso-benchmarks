@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: January 3, 2023
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -38,11 +38,15 @@ class Shubert(Function):
 
         global_minimizers = np.array([
             [-7.08350641, -7.70831374],
+            [5.48286421, -7.70831373],
+            [-0.8003211, -7.70831374],
+            [4.85805688, -7.08350641],
+            [-7.70831374, -0.8003211],
+            [-7.70831374, 5.4828642],
+            [4.85805688, 5.48286421],
         ])
-        global_minimum = -186.73090883
+        global_minimum = -186.7309088311
+
         function = lambda bx: fun_target(bx, dim_bx)
 
-        try:
-            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
-        except:
-            super(Shubert, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

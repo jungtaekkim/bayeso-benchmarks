@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -28,12 +28,9 @@ class GramacyAndLee2012(Function):
         assert bounds.shape[1] == 2
 
         global_minimizers = np.array([
-            [0.54856405],
+            [0.54856344],
         ])
-        global_minimum = -0.86901113
+        global_minimum = -0.8690111350
         function = lambda bx: fun_target(bx, dim_bx)
 
-        try:
-            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
-        except:
-            super(GramacyAndLee2012, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

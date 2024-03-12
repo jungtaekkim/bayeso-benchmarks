@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: February 8, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -36,10 +36,7 @@ class Michalewicz(Function):
         global_minimizers = np.array([
             [2.20290552, 1.57079632],
         ])
-        global_minimum = -1.8013034
+        global_minimum = -1.8013034101
         function = lambda bx: fun_target(bx, dim_bx)
 
-        try:
-            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
-        except:
-            super(Michalewicz, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

@@ -1,6 +1,6 @@
 #
-# author: Jungtaek Kim (jtkim@postech.ac.kr)
-# last updated: October 27, 2021
+# author: Jungtaek Kim (jungtaek.kim.mail@gmail.com)
+# last updated: August 4, 2023
 #
 
 import numpy as np
@@ -31,10 +31,7 @@ class Kim1(Function):
         global_minimizers = np.array([
             [4.72130726, 3.17086303],
         ])
-        global_minimum = -1.9715232347905773
+        global_minimum = -1.9715232348
         function = lambda bx: fun_target(bx, dim_bx)
 
-        try:
-            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
-        except:
-            super(Kim1, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, seed=seed)

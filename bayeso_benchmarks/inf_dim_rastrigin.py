@@ -37,7 +37,4 @@ class Rastrigin(Function):
 
         function = lambda bx: fun_target(bx, dim_problem)
 
-        try:
-            super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, dim_problem=dim_problem, seed=seed)
-        except:
-            super(Rastrigin, self).__init__(dim_bx, bounds, global_minimizers, global_minimum, function, dim_problem=dim_problem, seed=seed)
+        super().__init__(dim_bx, bounds, global_minimizers, global_minimum, function, dim_problem=dim_problem, seed=seed)
